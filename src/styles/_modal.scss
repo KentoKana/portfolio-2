@@ -1,0 +1,13 @@
+.closeIcon {
+    cursor: pointer;
+    color: white;
+    background-color: $gray-100;
+}
+
+.modalBody {
+    background-color: $primary;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.3);
+}

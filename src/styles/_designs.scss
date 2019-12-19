@@ -1,0 +1,23 @@
+.designs {
+    &__heading {
+        @include section-heading;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .designs {
+            &__button {
+                cursor: pointer;
+                width: 250px;
+                height: 250px;
+                padding: 0;
+                margin: 1em;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

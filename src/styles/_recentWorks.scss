@@ -1,0 +1,9 @@
+.recent-works {
+    display: flex;
+    flex-direction: column;
+    .recent-works {
+        &__heading {
+            @include section-heading;
+        }
+    }
+}

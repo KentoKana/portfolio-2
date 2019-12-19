@@ -1,0 +1,57 @@
+@import 'styles/_colors.scss';
+@import 'styles/_mixins.scss';
+@import 'styles/_modal.scss';
+@import 'styles/_socialLinkButton.scss';
+@import 'styles/_navigation.scss';
+@import 'styles/_banner.scss';
+@import 'styles/_recentWorks.scss';
+@import 'styles/_singleWork.scss';
+@import 'styles/_designs.scss';
+@import 'styles/_footer.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+html {
+    overflow-y: scroll;
+}
+
+.App {
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: $default-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+        text-decoration: none;
+    }
+    .primary {
+        color: $primary;
+    }
+    .button-primary {
+        background-color: $primary;
+        color: #fff;
+        padding: 0.5em;
+        margin: 0.5em;
+        text-align: center;
+        &:hover {
+            background-color: darken($primary, 30%);
+            @include transition-time;
+        }
+    }
+    .container {
+        display: flex;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+    .socialLinkBtns__container {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @media only screen and (max-width: 578px) {
+            top: 109px;
+            left: 0;
+            right: 0;
+        }
+    }
+}

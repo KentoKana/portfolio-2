@@ -1,0 +1,147 @@
+@mixin section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+        width: 100%;
+        // height: 100%;
+        @media only screen and (max-width: 1000px) {
+            width: 400px;
+        }
+        @media only screen and (max-width: 870px) {
+            width: 300px;
+        }
+        @media only screen and (max-width: 740px) {
+            width: 100%;
+            min-width: 275px;
+        }
+        border: solid 1px $gray-200;
+    }
+    .tools {
+        text-align: left;
+        h5 {
+            font-weight: bold;
+            font-size: 1.4em;
+            margin: 1em 0;
+            @media only screen and (max-width: 800px) {
+                margin-bottom: 0.5em;
+            }
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            transform: translateX(-1em);
+            font-size: 1.1em;
+            li {
+                padding: 0.2em 1em;
+            }
+        }
+    }
+}
+
+.single-work {
+    display: flex;
+    &:nth-child(odd) {
+        background-color: $gray-100;
+        .container {
+            flex-direction: row-reverse;
+            .single-work__section1 {
+                padding-left: 4em;
+                @media only screen and (max-width: 740px) {
+                    padding-left: 0;
+                }
+            }
+            .single-work__section2 {
+                text-align: left;
+            }
+        }
+    }
+    &:nth-child(even) {
+        background-color: #fff;
+        .container {
+            flex-direction: row;
+            .single-work__section1 {
+                padding-right: 4em;
+                @media only screen and (max-width: 740px) {
+                    padding-right: 0;
+                }
+            }
+            .single-work__section2 {
+                display: flex;
+                @media only screen and (max-width: 740px) {
+                    display: none;
+                }
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+    .container {
+        align-items: center;
+        padding: 3em 6em;
+        justify-content: space-around;
+        @media only screen and (max-width: 740px) {
+            justify-content: center;
+            padding: 3em 2em;
+        }
+        .single-work {
+            &__section1 {
+                flex-basis: 50%;
+                @media only screen and (max-width: 740px) {
+                    flex-basis: 70%;
+                }
+                @include section2;
+                .title-container {
+                    display: flex;
+                    h4 {
+                        margin: 0;
+                        font-size: 4.5em;
+                        @media only screen and (max-width: 1000px) {
+                            margin: 0.5em 0;
+                            font-size: 3em;
+                        }
+                        @media only screen and (max-width: 400px) {
+                            margin-bottom: 0;
+                            font-size: 1.8em;
+                        }
+                        font-weight: normal;
+                        .index {
+                            @include index-underline;
+                            margin-right: 0.5em;
+                        }
+                    }
+                }
+                .text {
+                    p {
+                        line-height: 2em;
+                    }
+                }
+                .learn-more-link {
+                    color: $primary;
+                    text-decoration: underline;
+                    &:hover {
+                        color: darken($primary, 30%);
+                        @include transition-time;
+                    }
+                    &-container {
+                        margin: 1em 0;
+                    }
+                }
+                .buttons {
+                    display: flex;
+                    margin-left: -0.5em;
+                }
+            }
+            &__section2 {
+                flex-basis: 50%;
+                @include section2;
+                @media only screen and (max-width: 740px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
