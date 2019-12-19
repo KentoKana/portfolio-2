@@ -3,8 +3,6 @@ import Media from 'react-media';
 
 
 function SingleWork(props) {
-
-
     return (
         <div className="single-work">
             <div className="container">
@@ -49,7 +47,7 @@ function SingleWork(props) {
                         <a className="learn-more-link" href={props.learnMoreUrl}>Learn More</a>
                     </div>
                     <div className="buttons">
-                        <a className="button-primary" href={props.liveUrl} target="_blank" rel="noopener">View Live Site</a>
+                        <a className="button-primary" href={props.liveUrl} target="_blank" rel="noopener noreferrer">View Live Site</a>
                         <a className="button-primary" href={props.gitHubUrl}>View Code</a>
                     </div>
                 </div>

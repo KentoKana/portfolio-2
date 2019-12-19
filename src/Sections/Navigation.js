@@ -24,6 +24,11 @@ function Navigation(props) {
             onSamePage: false,
             label: 'Google',
             url: 'http://google.com',
+        },
+        {
+            onSamePage: true,
+            label: 'About',
+            url: '#about',
         }
     ]
 
@@ -47,10 +52,10 @@ function Navigation(props) {
                     </button>
                     <ul className={`navigation__links ${menuVisible ? 'showMobile' : ''}`}>
                         {
-                            navLinks.map((nl) => {
+                            navLinks.map((nl, key) => {
                                 if (nl.onSamePage) {
                                     return (
-                                        <li>
+                                        <li key={key}>
                                             <AnchorLink
                                                 className=''
                                                 href={nl.url}
@@ -63,12 +68,11 @@ function Navigation(props) {
                                     );
                                 } else {
                                     return (
-                                        <li>
+                                        <li key={key}>
                                             <a href={nl.url}>{nl.label}</a>
                                         </li>
                                     )
                                 }
-
                             })
                         }
                     </ul>

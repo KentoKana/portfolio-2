@@ -1,0 +1,46 @@
+.about {
+    margin: 2em;
+    &__heading {
+        @include section-heading;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media only screen and (max-width: 674px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        .section-1 {
+            img {
+                width: 300px;
+            }
+        }
+        .section-2 {
+            max-width: 400px;
+            margin: 0 2em;
+            @media only screen and (max-width: 674px) {
+                margin: 0;
+            }
+            h4 {
+                font-size: 2em;
+            }
+            p {
+                line-height: 1.5em;
+            }
+            .skills {
+                h4 {
+                    font-size: 0.6em;
+                    margin: 0.5em 0;
+                }
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                font-size: 3em;
+                i {
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}

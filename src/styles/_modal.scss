@@ -2,10 +2,17 @@
     cursor: pointer;
     color: white;
     background-color: $gray-100;
+    &:hover {
+        background-color: $gray-200;
+        transition: 0.2s all;
+    }
 }
 
 .modalBody {
     background-color: $primary;
+    .modal-image {
+        width: 100%;
+    }
 }
 
 .overlay {

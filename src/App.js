@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 import Navigation from './Sections/Navigation';
 import Banner from './Sections/Banner';
 import Designs from './Sections/Designs';
 import RecentWorks from './Sections/RecentWorks';
+import About from './Sections/About';
+
 import Footer from './Sections/Footer';
 import SocialButton from './UI/SocialButton';
 
@@ -16,6 +18,7 @@ function App() {
       <Banner />
       <RecentWorks />
       <Designs />
+      <About />
       <Footer />
     </div>
   );

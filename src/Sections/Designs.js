@@ -5,14 +5,14 @@ const Designs = () => {
 
     let designDetails = [
         {
-            name: "Helen B. Physiotherapist Portfolio",
+            name: "Helen B. Physiotherapist Portfolio Web Design",
             thumbnailImageSrc: "images/projects/helen-portfolio.png",
             mainImageSrc: "images/projects/helen-portfolio.png",
         },
         {
-            name: "Helen B. Physiotherapist Portfolio",
-            thumbnailImageSrc: "images/projects/helen-portfolio.png",
-            mainImageSrc: "images/projects/helen-portfolio.png",
+            name: "Assistive Technology Web Design",
+            thumbnailImageSrc: "images/projects/assistive-tech-company-design.png",
+            mainImageSrc: "images/projects/assistive-tech-company-design.png",
         },
         {
             name: "Helen B. Physiotherapist Portfolio",
@@ -38,9 +38,19 @@ const Designs = () => {
 
 
     // Modal Logic
-
+    let [modalContent, handleModalContent] = useState({
+        imgSrc: '',
+        imgAlt: '',
+    });
     let [modalStatus, toggleModal] = useState(false);
-    const onOpenModal = () => {
+
+    const onOpenModal = (e) => {
+        handleModalContent(
+            {
+                imgSrc: e.target.getAttribute('data-main-image-src'),
+                imgAlt: e.target.getAttribute('data-image-alt'),
+            }
+        );
         toggleModal(true);
     };
 
@@ -63,23 +73,29 @@ const Designs = () => {
                     designDetails.map((dd, key) => {
                         return (
                             <React.Fragment key={key}>
-                                <button className="designs__button" onClick={onOpenModal} key={key}>
-                                    <img src={dd.thumbnailImageSrc} alt={dd.name} />
+                                <button className="designs__button" onClick={(e) => { onOpenModal(e) }}>
+                                    <img
+                                        src={dd.thumbnailImageSrc}
+                                        alt={dd.name}
+                                        data-main-image-src={dd.mainImageSrc}
+                                        data-image-alt={dd.name}
+                                    />
                                 </button>
-                                <Modal
-                                    open={open}
-                                    onClose={onCloseModal}
-                                    center
-                                    classNames={modalClassNames}
-                                    closeIconSize={40}
-                                >
-                                    <img style={{ width: "100%" }} src={dd.mainImageSrc} alt={dd.name} />
-                                </Modal>
                             </React.Fragment>
                         );
                     })
                 }
+                <Modal
+                    open={open}
+                    onClose={onCloseModal}
+                    center
+                    classNames={modalClassNames}
+                    closeIconSize={40}
+                >
+                    <img className='modal-image' src={modalContent.imgSrc} alt={modalContent.imgAlt} />
+                </Modal>
             </div>
+
         </section>
     );
 }
