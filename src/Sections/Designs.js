@@ -8,19 +8,6 @@ const Designs = () => {
     let [thumbnailIsLoaded, toggleThumbnailLoadStatus] = useState(false);
     let [mainImgIsLoaded, toggleMainImgLoadstatus] = useState(false);
 
-
-    const handleLoadStatus = (targetImgLoadStatus, handler) => {
-        if (!targetImgLoadStatus) {
-            setTimeout(() => { handler(true) }, 1000)
-        }
-    }
-
-    const executeHandlerOnLoad = (imageSrc, handlerToExecuteOnLoad) => {
-        let image = new Image();
-        image.src = imageSrc;
-        image.onload = handlerToExecuteOnLoad;
-    }
-
     let designDetails = [
         {
             name: "Helen B. Physiotherapist Portfolio Web Design",
@@ -89,7 +76,6 @@ const Designs = () => {
             <div className="container">
                 {
                     designDetails.map((dd, key) => {
-                        executeHandlerOnLoad(thumbnailIsLoaded, handleLoadStatus(thumbnailIsLoaded, toggleThumbnailLoadStatus));
                         return (
                             <React.Fragment key={key}>
                                 <button
@@ -97,20 +83,21 @@ const Designs = () => {
                                     onClick={(e) => { onOpenModal(e) }}
                                     disabled={!thumbnailIsLoaded}
                                 >
-                                    {
-                                        thumbnailIsLoaded ?
-                                            <img
-                                                src={dd.thumbnailImageSrc}
-                                                alt={dd.name}
-                                                data-main-image-src={dd.mainImageSrc}
-                                                data-image-alt={dd.name}
-                                            /> :
-                                            <Loader
-                                                type="ThreeDots"
-                                                color="grey"
-                                                height={30}
-                                                width={30}
-                                            />}
+                                    <img
+                                        src={dd.thumbnailImageSrc}
+                                        alt={dd.name}
+                                        data-main-image-src={dd.mainImageSrc}
+                                        data-image-alt={dd.name}
+                                        onLoad={() => { toggleThumbnailLoadStatus(true) }}
+                                        style={thumbnailIsLoaded ? {} : { display: 'none' }}
+                                    />
+                                    <Loader
+                                        type="ThreeDots"
+                                        color="grey"
+                                        height={30}
+                                        width={30}
+                                        style={!thumbnailIsLoaded ? {} : { display: 'none' }}
+                                    />
                                 </button>
                             </React.Fragment>
                         );
@@ -123,21 +110,22 @@ const Designs = () => {
                     classNames={modalClassNames}
                     closeIconSize={40}
                 >
-                    {executeHandlerOnLoad(modalContent.imgSrc, handleLoadStatus(mainImgIsLoaded, toggleMainImgLoadstatus))}
-                    {mainImgIsLoaded ?
-                        <img
-                            className='modal-image'
-                            src={modalContent.imgSrc}
-                            alt={modalContent.imgAlt}
-                        />
-                        :
-                        <Loader
-                            type="ThreeDots"
-                            color="grey"
-                            height={30}
-                            width={30}
-                        />
-                    }
+                    <img
+                        className='modal-image'
+                        src={modalContent.imgSrc}
+                        alt={modalContent.imgAlt}
+                        onLoad={() => { toggleMainImgLoadstatus(true) }}
+                        style={mainImgIsLoaded ? {} : { display: 'none' }}
+                    />
+                    {console.log(mainImgIsLoaded)}
+                    <Loader
+                        type="ThreeDots"
+                        color="grey"
+                        height={30}
+                        width={30}
+                        style={!mainImgIsLoaded ? {} : { display: 'none' }}
+                    />
+
                 </Modal>
             </div>
 
