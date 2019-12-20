@@ -10,7 +10,10 @@ function RecentWorks() {
             gitHubUrl: 'http://google.com',
             learnMoreUrl: 'http://google.com',
             toolsUsed: ['ReactJS', 'Google Maps API', 'Nominatim Geocoder API', 'Country.io API'],
-            imageSrc: 'images/projects/guess-the-location.gif',
+            imageSrc: {
+                main: 'images/projects/guess-the-location.gif',
+                thumbnail: 'images/projects/thumbnails/guess-the-location.png',
+            },
         },
         {
             name: 'XML Chat Application',
@@ -19,16 +22,10 @@ function RecentWorks() {
             gitHubUrl: 'http://google.com',
             learnMoreUrl: 'http://google.com',
             toolsUsed: ['XML', 'AJAX', 'jQuery', 'PHP'],
-            imageSrc: 'images/projects/xml-chat-app.gif',
-        },
-        {
-            name: 'Time Log Application',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.',
-            liveUrl: 'http://google.com',
-            gitHubUrl: 'http://google.com',
-            learnMoreUrl: 'http://google.com',
-            toolsUsed: ['HTML', 'SASS', 'JavaScript'],
-            imageSrc: 'images/projects/xml-chat-app.gif',
+            imageSrc: {
+                main: 'images/projects/xml-chat-app.gif',
+                thumbnail: 'images/projects/thumbnails/xml-chat-app.png',
+            }
         },
     ]
 

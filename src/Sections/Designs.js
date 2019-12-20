@@ -6,32 +6,32 @@ const Designs = () => {
     let designDetails = [
         {
             name: "Helen B. Physiotherapist Portfolio Web Design",
-            thumbnailImageSrc: "images/projects/helen-portfolio.png",
+            thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
             mainImageSrc: "images/projects/helen-portfolio.png",
         },
         {
             name: "Assistive Technology Web Design",
-            thumbnailImageSrc: "images/projects/assistive-tech-company-design.png",
+            thumbnailImageSrc: "images/projects/thumbnails/assistive-tech-company-design.png",
             mainImageSrc: "images/projects/assistive-tech-company-design.png",
         },
         {
             name: "Helen B. Physiotherapist Portfolio",
-            thumbnailImageSrc: "images/projects/helen-portfolio.png",
+            thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
             mainImageSrc: "images/projects/helen-portfolio.png",
         },
         {
             name: "Helen B. Physiotherapist Portfolio",
-            thumbnailImageSrc: "images/projects/helen-portfolio.png",
+            thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
             mainImageSrc: "images/projects/helen-portfolio.png",
         },
         {
             name: "Helen B. Physiotherapist Portfolio",
-            thumbnailImageSrc: "images/projects/helen-portfolio.png",
+            thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
             mainImageSrc: "images/projects/helen-portfolio.png",
         },
         {
             name: "Helen B. Physiotherapist Portfolio",
-            thumbnailImageSrc: "images/projects/helen-portfolio.png",
+            thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
             mainImageSrc: "images/projects/helen-portfolio.png",
         },
     ];

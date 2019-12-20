@@ -15,16 +15,16 @@ const About = () => {
                         I'm a full stack web developer in Toronto. My interest ranges from designing easy-to-use, aesthetically pleasing user interfaces to building web applications.
                     </p>
                     <div className="skills">
-                        <h4 class="">Tools I'm Familiar With</h4>
+                        <h4>Tools I'm Familiar With</h4>
                         <div className="skillList">
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-sass"></i>
-                            <i class="fab fa-react"></i>
-                            <i class="fab fa-node"></i>
-                            <i class="fab fa-php"></i>
-                            <i class="fas fa-database"></i>
+                            <i className="fab fa-js"></i>
+                            <i className="fab fa-html5"></i>
+                            <i className="fab fa-css3-alt"></i>
+                            <i className="fab fa-sass"></i>
+                            <i className="fab fa-react"></i>
+                            <i className="fab fa-node"></i>
+                            <i className="fab fa-php"></i>
+                            <i className="fas fa-database"></i>
                         </div>
                     </div>
 

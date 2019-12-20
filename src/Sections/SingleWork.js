@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Media from 'react-media';
 
 
 function SingleWork(props) {
+
+    let [imageSrc, toggleImgSrc] = useState(props.imageSrc.thumbnail);
+
+    const handleMouseOver =()=>{
+        toggleImgSrc(props.imageSrc.main);
+    }
+
+    const handleMouseOut =()=> {
+        toggleImgSrc(props.imageSrc.thumbnail);
+    }
+
     return (
-        <div className="single-work">
+        <div className="single-work" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             <div className="container">
                 <div className="single-work__section1">
                     <Media query="(min-width: 739px)" render={() =>
@@ -14,14 +25,12 @@ function SingleWork(props) {
                                     <h4><span className="index">{props.index < 10 ? `0${props.index + 1}` : props.index + 1}</span><div className="project-title primary">{props.projectName}</div></h4>
                                 </div>
                             </>
-
                         )}
                     />
-
                     <Media query="(max-width: 740px)" render={() =>
                         (
                             <>
-                                <img src={props.imageSrc} alt={props.projectName} />
+                                <img src={imageSrc} alt={props.projectName} />
                                 <div className="title-container">
                                     <h4><span className="index">{props.index < 10 ? `0${props.index + 1}` : props.index + 1}</span><div className="project-title primary">{props.projectName}</div></h4>
                                 </div>
@@ -55,7 +64,7 @@ function SingleWork(props) {
                     <Media query="(min-width: 739px)" render={() =>
                         (
                             <>
-                                <img src={props.imageSrc} alt={props.projectName} />
+                                <img src={imageSrc} alt={props.projectName} />
                                 <div className="tools">
                                     <h5>Tools Used</h5>
                                     <ul>
