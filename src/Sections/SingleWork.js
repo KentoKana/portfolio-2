@@ -15,7 +15,7 @@ function SingleWork(props) {
     }
 
     return (
-        <div className="single-work" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <div className="single-work" onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}>
             <div className="container">
                 <div className="single-work__section1">
                     <Media query="(min-width: 739px)" render={() =>
