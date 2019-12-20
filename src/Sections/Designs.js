@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import Modal from 'react-responsive-modal';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from 'react-loader-spinner';
+import ProgressiveImage from 'react-progressive-image';
+import ImagePlaceholder from '../UI/ImagePlaceholder';
 
 const Designs = () => {
-
-    let [thumbnailIsLoaded, toggleThumbnailLoadStatus] = useState(false);
-    let [mainImgIsLoaded, toggleMainImgLoadstatus] = useState(false);
 
     let designDetails = [
         {
@@ -78,26 +75,19 @@ const Designs = () => {
                     designDetails.map((dd, key) => {
                         return (
                             <React.Fragment key={key}>
-                                <button
-                                    className="designs__button"
-                                    onClick={(e) => { onOpenModal(e) }}
-                                    disabled={!thumbnailIsLoaded}
-                                >
-                                    <img
-                                        src={dd.thumbnailImageSrc}
-                                        alt={dd.name}
-                                        data-main-image-src={dd.mainImageSrc}
-                                        data-image-alt={dd.name}
-                                        onLoad={() => { toggleThumbnailLoadStatus(true) }}
-                                        style={thumbnailIsLoaded ? {} : { display: 'none' }}
-                                    />
-                                    <Loader
-                                        type="ThreeDots"
-                                        color="grey"
-                                        height={30}
-                                        width={30}
-                                        style={!thumbnailIsLoaded ? {} : { display: 'none' }}
-                                    />
+                                <button className="designs__button" onClick={(e) => { onOpenModal(e) }}>
+                                    <ProgressiveImage src={dd.thumbnailImageSrc} placeholder=" ">
+                                        {(src, loading) => {
+                                            return loading ? <ImagePlaceholder height={250} width={250}/> :
+                                                <img
+                                                    src={src}
+                                                    alt={dd.name}
+                                                    data-main-image-src={dd.mainImageSrc}
+                                                    data-image-alt={dd.name}
+                                                />
+                                        }}
+                                    </ProgressiveImage>
+
                                 </button>
                             </React.Fragment>
                         );
@@ -110,22 +100,12 @@ const Designs = () => {
                     classNames={modalClassNames}
                     closeIconSize={40}
                 >
-                    <img
-                        className='modal-image'
-                        src={modalContent.imgSrc}
-                        alt={modalContent.imgAlt}
-                        onLoad={() => { toggleMainImgLoadstatus(true) }}
-                        style={mainImgIsLoaded ? {} : { display: 'none' }}
-                    />
-                    {console.log(mainImgIsLoaded)}
-                    <Loader
-                        type="ThreeDots"
-                        color="grey"
-                        height={30}
-                        width={30}
-                        style={!mainImgIsLoaded ? {} : { display: 'none' }}
-                    />
-
+                    <ProgressiveImage src={modalContent.imgSrc} placeholder=" ">
+                        {(src, loading) => {
+                            return loading ? <ImagePlaceholder height={270} width={270} bgColor="inherit" spinnerColor="white"/> :
+                                <img className='modal-image' src={src} alt={modalContent.imgAlt} />
+                        }}
+                    </ProgressiveImage>
                 </Modal>
             </div>
 
