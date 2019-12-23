@@ -87,6 +87,9 @@
             justify-content: center;
             padding: 3em 2em;
         }
+        @media only screen and (max-width: 585px) {
+            padding: 1em 0;
+        }
         .single-work {
             &__section1 {
                 flex-basis: 50%;
@@ -105,7 +108,7 @@
                         }
                         @media only screen and (max-width: 400px) {
                             margin-bottom: 0;
-                            font-size: 1.8em;
+                            font-size: 3em;
                         }
                         font-weight: normal;
                         .index {

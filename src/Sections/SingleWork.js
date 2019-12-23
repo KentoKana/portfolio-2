@@ -17,7 +17,7 @@ function SingleWork(props) {
 
     const ProgressiveImgComponent = () => {
         return (
-            <ProgressiveImage src={imageSrc} placeholder="" delay={500}>
+            <ProgressiveImage src={imageSrc} placeholder="">
                 {(src, loading) => {
                     return loading ? <ImagePlaceholder
                         placeholderImg={props.imageSrc.thumbnail}

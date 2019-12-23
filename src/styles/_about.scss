@@ -21,24 +21,35 @@
             margin: 0 2em;
             @media only screen and (max-width: 674px) {
                 margin: 0;
-            }
-            h4 {
-                font-size: 2em;
+                text-align: center;
             }
             p {
                 line-height: 1.5em;
+                font-size: 1.2em;
+                margin: 0;
             }
-            .skills {
-                h4 {
-                    font-size: 0.6em;
-                    margin: 0.5em 0;
-                }
-                display: flex;
-                justify-content: flex-start;
-                flex-wrap: wrap;
+            h4 {
+                font-size: 2em;
+                margin: 0.5em 0;
+            }
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            i {
                 font-size: 3em;
-                i {
-                    padding-right: 10px;
+                margin: 0.2em 0;
+                margin-right: 0.5em;
+            }
+            @media only screen and (max-width: 674px) {
+                justify-content: center;
+                .skillList {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    i {
+                        margin-right: 0;
+                        padding: 10px;
+                    }
                 }
             }
         }

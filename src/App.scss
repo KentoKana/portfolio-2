@@ -14,6 +14,11 @@ html {
     overflow-y: scroll;
 }
 
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 .App {
     position: relative;
     box-sizing: border-box;
@@ -50,7 +55,7 @@ html {
         top: 50%;
         transform: translateY(-50%);
         @media only screen and (max-width: 578px) {
-            top: 109px;
+            top: 77px;
             left: 0;
             right: 0;
         }
