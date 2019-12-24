@@ -16,6 +16,7 @@ const ImagePlaceholder = (props) => {
                     <img
                         className="placeholderImg"
                         src={props.placeholderImg}
+                        alt="place holder"
                     />
                     <div style={{
                         backgroundColor: 'lightgray',

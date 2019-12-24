@@ -28,7 +28,7 @@ class Blog {
 
     buildBlogJSON = () => {
 
-        let blogJSON = this.postFileNames.map((f) => {
+        let blogJSON = this.postFileNames.map((f, index) => {
 
             // Get time at which file was created
             let fileCreationTime = this.getFileCreationTime(f);
@@ -63,13 +63,13 @@ class Blog {
             )
 
             return {
+                id: index,
                 timeCreated: fileCreationTime,
                 fileName: f,
                 author: author,
                 postname: postname,
                 tags: tags,
-                content: content,
-                // rawText: rawText,
+                content: content
             };
 
         })
@@ -86,12 +86,3 @@ module.exports = {
     buildBlog: new Blog,
 }
 
-
-
-//Convert array into JSON 
-// let blogJSON = file.reduce((acc, curr) => {
-//     console.log(acc);
-//     acc[curr] = {};
-//     return acc
-// }, {})
-// console.log(blogJSON);

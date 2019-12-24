@@ -3,7 +3,8 @@ Kento Kanazawa
 --author
 tags--
 Coding,
-Web Development
+Web Development,
+One
 --tags
 postname--
 My First Post

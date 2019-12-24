@@ -1,13 +1,11 @@
 author--
 Kento Kanazawa
 --author
-
 tags--
 Coding,
 Web Development,
 Getting A Job
 --tags
-
 postname--
 My Second Post
 --postname

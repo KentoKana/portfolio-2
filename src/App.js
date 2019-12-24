@@ -5,12 +5,12 @@ import Banner from './Sections/Banner';
 import Designs from './Sections/Designs';
 import RecentWorks from './Sections/RecentWorks';
 import About from './Sections/About';
-
+import Blog from './Sections/Blog';
 import Footer from './Sections/Footer';
 import SocialButton from './UI/SocialButton';
 
 function App() {
-  
+
   return (
     <div className="App">
       <Navigation />
@@ -19,6 +19,7 @@ function App() {
       <RecentWorks />
       <Designs />
       <About />
+      <Blog />
       <Footer />
     </div>
   );

@@ -2,14 +2,16 @@
 // ---- Import Modules ---- //
 const express = require('express');
 const path = require('path');
-const blogBuilder = require('./server/blog');
+const blogBuilder = require('./server/Blog');
 const app = express();
-
+var cors = require('cors');
 
 // ----Paths---- //
 const paths = {
   reactBuild: path.join(__dirname, 'build')
 }
+
+app.use(cors());
 
 // ---- Serve React Production Build Static Files ---- //
 app.use(express.static(paths.reactBuild));
@@ -25,11 +27,9 @@ let blog = blogBuilder.buildBlog;
 let posts = blog.buildBlogJSON();
 
 app.get('/blog.json', function (req, res) {
-  res.json({
-    blog: posts
-  });
+  res.json({blog: posts});
 });
 
 
-
 app.listen(process.env.PORT || 9791);
+console.log('Listening on port 9791');
