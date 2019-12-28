@@ -21,20 +21,20 @@ function Navigation(props) {
             url: '#designs',
         },
         {
-            onSamePage: false,
-            label: 'Google',
-            url: 'http://google.com',
-        },
-        {
             onSamePage: true,
             label: 'About',
             url: '#about',
-        }
+        },
+        {
+            onSamePage: true,
+            label: 'Blog',
+            url: '#blog',
+        },
     ]
 
     const renderMobileMenuIcon = () => {
         if (menuVisible) {
-            return (<i class="fas fa-times"></i>);
+            return (<i className="fas fa-times"></i>);
         } else {
             return (<i className="fas fa-bars"></i>);
         }

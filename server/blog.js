@@ -9,8 +9,9 @@ class Blog {
     }
 
     getPostFileNames = () => {
-        let postFileNames = fs.readdirSync(this.pathToBlogDir, []);
-        return postFileNames
+        let postFileNames = fs.readdirSync(this.pathToBlogDir, []).filter(f=>f.includes(".md"));
+        console.log(postFileNames);
+        return postFileNames;
     }
 
     getPostFileCreationTime = (filePath) => {
@@ -67,19 +68,14 @@ class Blog {
                 timeCreated: fileCreationTime,
                 fileName: f,
                 author: author,
-                postname: postname,
+                postName: postname,
                 tags: tags,
                 content: content
             };
 
         })
-
-        return {
-            posts: {
-                ...blogJSON
-            }
-        };
-    }
+        return [...blogJSON]
+    };
 }
 
 module.exports = {

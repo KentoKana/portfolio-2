@@ -1,0 +1,8 @@
+.blog {
+    &__heading {
+        @include section-heading;
+    }
+    .container {
+        .blog {}
+    }
+}
