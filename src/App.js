@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import Navigation from './Sections/Navigation';
 import Footer from './Sections/Footer';
@@ -12,22 +12,15 @@ import {
 } from "react-router-dom";
 
 function App() {
-
-  let [blogObj, setBlogObj] = useState({});
-  const handleBlogObj = (blogObj) => {
-    setBlogObj(blogObj);
-  }
   return (
     <div className="App">
       <Navigation />
       <SocialButton />
       <Switch>
         <Route exact path="/">
-          <Home
-            getBlogObj={handleBlogObj}
-          />
+          <Home />
         </Route>
-        <Route path="/single-blog" component={() => <SingleBlog blogObj={blogObj} />} />
+        <Route path="/single-blog" component={() => <SingleBlog />} />
       </Switch>
       <Footer />
     </div>

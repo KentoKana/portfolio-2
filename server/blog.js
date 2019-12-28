@@ -9,8 +9,7 @@ class Blog {
     }
 
     getPostFileNames = () => {
-        let postFileNames = fs.readdirSync(this.pathToBlogDir, []).filter(f=>f.includes(".md"));
-        console.log(postFileNames);
+        let postFileNames = fs.readdirSync(this.pathToBlogDir, []).filter(f => f.includes(".md"));
         return postFileNames;
     }
 
@@ -25,6 +24,10 @@ class Blog {
 
     getFileTextContent = (pathToFile) => {
         return fs.readFileSync(pathToFile).toString();
+    }
+
+    getPostByID = (blogArray, id) => {
+        return blogArray.find((obj) => { return obj.id === parseInt(id); });
     }
 
     buildBlogJSON = () => {

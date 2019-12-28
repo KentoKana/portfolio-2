@@ -13,9 +13,7 @@ function Home(props) {
         <RecentWorks />
         <Designs />
         <About />
-        <Blog 
-          getBlogObj = {props.getBlogObj}
-        />
+        <Blog />
       </div>
     );
   }
