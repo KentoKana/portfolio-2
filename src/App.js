@@ -5,6 +5,7 @@ import Footer from './Sections/Footer';
 import SocialButton from './UI/SocialButton';
 import Home from './Pages/Home';
 import SingleBlog from './Pages/SingleBlog';
+import NotFound from './Pages/404';
 
 import {
   Switch,
@@ -17,10 +18,9 @@ function App() {
       <Navigation />
       <SocialButton />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+        <Route exact path="/" component={() => <Home />} />
         <Route path="/single-blog" component={() => <SingleBlog />} />
+        <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
     </div>

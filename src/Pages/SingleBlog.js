@@ -3,34 +3,30 @@ import { Link } from 'react-router-dom';
 function SingleBlog() {
 
     let [blogPost, handleBlogPost] = useState(false);
-    let [postID, setPostID] = useState('');
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        setPostID(urlParams.get('id'));
-        fetch('http://localhost:9791/single-post.json/', {
+        const postID = parseInt(urlParams.get('id'));
+        fetch('http://portfolio-new.kentokanazawa.com/single-post.json/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ postID: postID }),
+        }).then(response =>
+            response.json()
+        ).then((data) => {
+            try {
+                handleBlogPost(data.blog);
+            } catch (err) {
+                console.log(err);
+            }
+            return data.blog;
         })
 
-        fetch('http://localhost:9791/single-post.json/')
-            .then(response =>
-                response.json()
-            )
-            .then((data) => {
-                try {
-                    handleBlogPost(data.blog);
-                } catch (err) {
-                    console.log(err);
-                }
-                console.log(data);
-                return data.blog;
-            })
-    }, [postID])
+        handleBlogPost({});
+    }, [])
 
     if (blogPost) {
         let postObj = blogPost;

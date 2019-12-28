@@ -2,20 +2,14 @@
 // ---- Import Modules ---- //
 const express = require('express');
 const path = require('path');
-const blogBuilder = require('./server/Blog');
+const blogBuilder = require('./Blog');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "YOUR-DOMAIN.TLD"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 // ----Paths---- //
 const paths = {
-  reactBuild: path.join(__dirname, 'build')
+  reactBuild: path.join(__dirname, '../build')
 }
 
 app.use(cors());
@@ -30,8 +24,7 @@ app.use(express.static(paths.reactBuild));
 let blog = blogBuilder.buildBlog;
 let posts = blog.buildBlogJSON();
 
-app.get('/blog.json', (req, res, next) => {
-  // Blog Endpoint
+app.get('/blog.json', (req, res) => {
   const pageCount = Math.ceil(posts.length / 4);
   let page = parseInt(req.query.p);
   if (!page) {
@@ -47,20 +40,16 @@ app.get('/blog.json', (req, res, next) => {
   });
 });
 
-let blogPostID;
-app.post('/single-post.json', (req, res, next) => {
-  blogPostID = req.body;
-})
-
-app.get('/single-post.json', (req, res, next) => {
+app.post('/single-post.json', (req, res) => {
+  let blogPostID = req.body;
   let post = blog.getPostByID(posts, blogPostID.postID);
   res.json({
     blog: post
-  });
+  })
 })
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
 app.listen(process.env.PORT || 9791);
