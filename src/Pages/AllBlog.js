@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProgressiveImage from 'react-progressive-image';
 import ImagePlaceholder from '../UI/ImagePlaceholder';
+import Pagination from '../UI/Pagination';
 import { getDateFromFileName } from '../Helpers/functions';
 
-function AllBlog() {
+const AllBlog = () => {
     let [blogPosts, handleBlogPosts] = useState(false);
     let [pageCount, getPageCount] = useState(false);
     let [currentPage, setCurrentPage] = useState(1);
@@ -23,44 +24,6 @@ function AllBlog() {
             })
 
     }, [currentPage])
-
-    const Pagination = () => {
-        let prevBtnDisableStatus = currentPage === 1 ? true : false;
-        let nextBtnDisableStatus = currentPage === pageCount ? true : false;
-
-        const handlePrevClick = () => {
-            setCurrentPage(currentPage - 1);
-        }
-        const handleNextClick = () => {
-            setCurrentPage(currentPage + 1);
-        }
-
-        let pagesArr = [];
-        for (let i = 1; i <= pageCount; i++) {
-            pagesArr.push(i);
-        }
-        return (
-            <>
-                <button disabled={prevBtnDisableStatus} onClick={handlePrevClick}>Prev</button>
-                {pagesArr.map((pl, key) => {
-                    if (currentPage === key + 1) {
-                        return (
-                            <button disabled={true} key={key} onClick={() => setCurrentPage(pl)}>
-                                {pl}
-                            </button>
-                        )
-                    } else {
-                        return (
-                            <button disabled={false} key={key} onClick={() => setCurrentPage(pl)}>
-                                {pl}
-                            </button>
-                        )
-                    }
-                })}
-                <button onClick={handleNextClick} disabled={nextBtnDisableStatus}>Next</button>
-            </>
-        );
-    }
 
     return (
         <main className="blogPosts">
@@ -94,7 +57,11 @@ function AllBlog() {
                     )
                 })}
                 <div className="blogPosts__pagination">
-                    <Pagination />
+                    <Pagination
+                        setCurrentPage={setCurrentPage}
+                        currentPage={currentPage}
+                        pageCount={pageCount}
+                    />
                 </div>
             </div>
         </main>
