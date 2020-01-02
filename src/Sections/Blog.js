@@ -51,7 +51,7 @@ function Blog() {
                     )
                 })}
                 <div className="blog__view-all-link">
-                    <Link to={'/blog-posts'}>View All Posts</Link>
+                    <Link to={'/blog-posts?p=1'}>View All Posts</Link>
                 </div>
             </div>
         </section>

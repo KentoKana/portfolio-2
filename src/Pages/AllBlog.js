@@ -6,9 +6,12 @@ import Pagination from '../UI/Pagination';
 import { getDateFromFileName } from '../Helpers/functions';
 
 const AllBlog = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageNum = parseInt(urlParams.get('p'));
+
     let [blogPosts, handleBlogPosts] = useState(false);
     let [pageCount, getPageCount] = useState(false);
-    let [currentPage, setCurrentPage] = useState(1);
+    let [currentPage, setCurrentPage] = useState(pageNum);
 
     useEffect(() => {
         fetch(`http://portfolio-new.kentokanazawa.com/blog.json?p=${currentPage}`)
