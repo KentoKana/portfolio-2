@@ -2,7 +2,7 @@
     margin: 3em 0;
     &__heading {
         @include section-heading;
-        margin-bottom: 1em;
+        margin-bottom: 0;
     }
     .container {
         margin: 0 auto;
@@ -14,7 +14,7 @@
             align-items: center;
         }
         div {
-            margin: 0 20px;
+            margin: 20px;
             width: 250px;
             @media only screen and (max-width: 945px) {
                 width: 200px;
@@ -23,21 +23,20 @@
                 width: 175px;
             }
             @media only screen and (max-width: 710px) {
-                width: 175px;
-            }
-            @media only screen and (max-width: 710px) {
                 width: 60%;
-                margin-top: 3em;
             }
             @media only screen and (max-width: 500px) {
-                width: 90%;
-                margin-top: 3em;
+                width: 70%;
+                margin: 0;
+                &:not(first-child) {
+                    margin-top: 3em;
+                }
             }
             img {
                 width: 100%;
                 &:hover {
                     filter: brightness(60%);
-                    transition: 0.3s all ease;
+                    @include transition-time;
                 }
             }
             h4 {
@@ -59,7 +58,7 @@
         }
         .blog__view-all-link {
             margin: 2em;
-            width: 100%;
+            // width: 100%;
             font-size: 1.5em;
             text-align: center;
         }

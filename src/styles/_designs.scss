@@ -20,7 +20,7 @@
                 }
                 &:hover {
                     filter: brightness(50%);
-                    transition: 0.3s ease all;
+                    @include transition-time;
                 }
             }
         }

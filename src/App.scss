@@ -10,6 +10,7 @@
 @import 'styles/_about.scss';
 @import 'styles/_blog.scss';
 @import 'styles/_footer.scss';
+@import 'styles/_pagination.scss';
 @import 'styles/pages/allblog.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 html {
@@ -49,7 +50,7 @@ button {
     .container {
         display: flex;
         margin: 0 auto;
-        max-width: 1000px;
+        max-width: 1100px;
     }
     .socialLinkBtns__container {
         position: fixed;

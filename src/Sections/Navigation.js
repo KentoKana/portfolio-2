@@ -74,7 +74,7 @@ function Navigation(props) {
         <header className="navigation">
             <nav>
                 <div className="container">
-                    <Link to="/" onClick={handleMobileMenu}>
+                    <Link to="/" >
                         <img className="navigation__logo" src="images/logo.png" alt="Web Developer Logo" />
                     </Link>
                     <button onClick={handleMobileMenu} className="navigation__hamburger-menu button-primary">

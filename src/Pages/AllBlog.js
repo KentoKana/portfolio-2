@@ -30,7 +30,7 @@ const AllBlog = () => {
 
     return (
         <main className="blogPosts">
-            <h3 className="blogPosts__heading"><span>Recent Blog Posts</span></h3>
+            <h1 className="blogPosts__heading"><span>Recent Blog Posts</span></h1>
             <div className="container">
                 {Object.keys(blogPosts).map((p, key) => {
                     return (
@@ -38,34 +38,36 @@ const AllBlog = () => {
                             <ProgressiveImage src={`images/blog/${blogPosts[p].featureImage}`} placeholder=" ">
                                 {(src, loading) => {
                                     return loading ? <ImagePlaceholder height={250} width={250} /> :
-                                        <Link className="blog__title" to={`/single-blog?id=${blogPosts[p].id}`}>
-                                            <img src={src} alt={blogPosts[p].postName} />
-                                        </Link>
-
+                                        <div>
+                                            <Link className="blog__title" to={`/single-blog?id=${blogPosts[p].id}`}>
+                                                <img src={src} alt={blogPosts[p].postName} />
+                                            </Link>
+                                        </div>
                                 }}
                             </ProgressiveImage>
                             <div className="text">
-                                <h4>
+                                <h2>
                                     <Link className="blog__title" to={`/single-blog?id=${blogPosts[p].id}`}>
                                         {blogPosts[p].postName}
                                     </Link>
-                                </h4>
+                                </h2>
                                 <em>{getDateFromFileName(blogPosts[p].fileName)}</em>
                                 <p>
-                                    {`${blogPosts[p].content.substring(0, 100)}...`}
+                                    {`${blogPosts[p].content.substring(0, 250)}...`}
                                 </p>
-                                <Link to={`/single-blog?id=${blogPosts[p].id}`}>Read More...</Link>
+                                <div className="read-more-link-container">
+                                    <Link to={`/single-blog?id=${blogPosts[p].id}`}>Read More</Link>
+                                </div>
+
                             </div>
                         </div>
                     )
                 })}
-                <div className="blogPosts__pagination">
-                    <Pagination
-                        setCurrentPage={setCurrentPage}
-                        currentPage={currentPage}
-                        pageCount={pageCount}
-                    />
-                </div>
+                <Pagination
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                    pageCount={pageCount}
+                />
             </div>
         </main>
     );

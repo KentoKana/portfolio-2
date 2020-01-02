@@ -5,7 +5,7 @@ const blog = blogBuilder.buildBlog;
 const posts = blog.buildBlogJSON();
 
 router.get('/', (req, res) => {
-    const postsPerPage = 3;
+    const postsPerPage = 6;
     const pageCount = Math.ceil(posts.length / postsPerPage);
     let page = parseInt(req.query.p);
     if (!page) {

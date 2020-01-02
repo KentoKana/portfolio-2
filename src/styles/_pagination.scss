@@ -1,0 +1,25 @@
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.3em;
+    width: 100%;
+    div {
+        margin: 1em 0;
+        margin-right: 10px;
+        a {
+            padding: 0 10px;
+            margin: 10px 3px;
+            color: $primary;
+            border: 1px solid $primary;
+            &:hover {
+                color: #fff;
+                background-color: $primary;
+                @include transition-time;
+            }
+            &.currentPage {
+                background-color: $primary;
+                color: #fff;
+            }
+        }
+    }
+}
