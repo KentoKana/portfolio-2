@@ -9,6 +9,7 @@
         .designs {
             &__button {
                 cursor: pointer;
+                border: solid 1px #000;
                 width: 250px;
                 height: 250px;
                 padding: 0;
@@ -16,6 +17,10 @@
                 img {
                     width: 100%;
                     height: 100%;
+                }
+                &:hover {
+                    filter: brightness(50%);
+                    transition: 0.3s ease all;
                 }
             }
         }

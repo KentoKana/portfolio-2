@@ -78,7 +78,7 @@ const Designs = () => {
                                 <button className="designs__button" onClick={(e) => { onOpenModal(e) }}>
                                     <ProgressiveImage src={dd.thumbnailImageSrc} placeholder=" ">
                                         {(src, loading) => {
-                                            return loading ? <ImagePlaceholder height={250} width={250}/> :
+                                            return loading ? <ImagePlaceholder height={250} width={250} /> :
                                                 <img
                                                     src={src}
                                                     alt={dd.name}
@@ -102,7 +102,7 @@ const Designs = () => {
                 >
                     <ProgressiveImage src={modalContent.imgSrc} placeholder=" ">
                         {(src, loading) => {
-                            return loading ? <ImagePlaceholder height={270} width={270} bgColor="inherit" spinnerColor="white"/> :
+                            return loading ? <ImagePlaceholder height={270} width={270} bgColor="inherit" spinnerColor="white" /> :
                                 <img className='modal-image' src={src} alt={modalContent.imgAlt} />
                         }}
                     </ProgressiveImage>

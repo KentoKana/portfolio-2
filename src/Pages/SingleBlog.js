@@ -17,16 +17,12 @@ function SingleBlog() {
         }).then(response =>
             response.json()
         ).then((data) => {
-            try {
-                handleBlogPost(data.blog);
-            } catch (err) {
-                console.log(err);
-            }
+            handleBlogPost(data.blog);
             return data.blog;
-        })
+        });
 
         handleBlogPost({});
-    }, [])
+    }, []);
 
     if (blogPost) {
         let postObj = blogPost;

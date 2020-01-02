@@ -5,6 +5,7 @@ class Blog {
 
     constructor() {
         this.pathToBlogDir = path.join(__dirname, '../blog/');
+        this.pathToImageDir = path.join(__dirname, '../build/images/blog');
         this.postFileNames = this.getPostFileNames();
     }
 
@@ -66,18 +67,24 @@ class Blog {
                 rawText.lastIndexOf("\r\n--postname")
             )
 
+            let featureImage = rawText.substring(
+                rawText.lastIndexOf("\r\nfeatureImage--") + 18,
+                rawText.lastIndexOf("\r\n--featureImage")
+            )
+
             return {
                 id: index,
                 timeCreated: fileCreationTime,
                 fileName: f,
                 author: author,
                 postName: postname,
+                featureImage: featureImage,
                 tags: tags,
                 content: content
             };
 
         })
-        return [...blogJSON]
+        return [...blogJSON].reverse()
     };
 }
 

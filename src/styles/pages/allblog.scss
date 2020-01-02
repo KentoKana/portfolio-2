@@ -1,0 +1,21 @@
+.blogPosts {
+    &__heading {
+        @include section-heading;
+        margin-top: 83.85px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        .blogPosts {
+            &__content {
+                margin: 1em 0;
+                display: flex;
+                flex-direction: row;
+                img {
+                    width: 300px;
+                }
+            }
+            &__pagination {}
+        }
+    }
+}

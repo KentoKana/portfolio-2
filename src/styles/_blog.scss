@@ -1,8 +1,67 @@
 .blog {
+    margin: 3em 0;
     &__heading {
         @include section-heading;
+        margin-bottom: 1em;
     }
     .container {
-        .blog {}
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media only screen and (max-width: 710px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        div {
+            margin: 0 20px;
+            width: 250px;
+            @media only screen and (max-width: 945px) {
+                width: 200px;
+            }
+            @media only screen and (max-width: 800px) {
+                width: 175px;
+            }
+            @media only screen and (max-width: 710px) {
+                width: 175px;
+            }
+            @media only screen and (max-width: 710px) {
+                width: 60%;
+                margin-top: 3em;
+            }
+            @media only screen and (max-width: 500px) {
+                width: 90%;
+                margin-top: 3em;
+            }
+            img {
+                width: 100%;
+                &:hover {
+                    filter: brightness(60%);
+                    transition: 0.3s all ease;
+                }
+            }
+            h4 {
+                .blog__title {
+                    font-size: 1.4em;
+                    color: $primary;
+                    margin: 1em 0;
+                    text-decoration: none;
+                }
+            }
+            a {
+                color: $primary;
+                text-decoration: underline;
+                &:hover {
+                    color: darken($primary, 30%);
+                    @include transition-time;
+                }
+            }
+        }
+        .blog__view-all-link {
+            margin: 2em;
+            width: 100%;
+            font-size: 1.5em;
+            text-align: center;
+        }
     }
 }

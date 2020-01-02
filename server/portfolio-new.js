@@ -2,16 +2,20 @@
 // ---- Import Modules ---- //
 const express = require('express');
 const path = require('path');
-const blogBuilder = require('./Blog');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
+// ---- Import Routes ---- //
+const blogRoute = require('./routes/blog');
+const singlePostRoute = require('./routes/singlePost');
 
 // ----Paths---- //
 const paths = {
   reactBuild: path.join(__dirname, '../build')
 }
 
+// Use Middlewares
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -20,37 +24,15 @@ app.use(bodyParser.json());
 app.use(express.static(paths.reactBuild));
 
 // ---- Set Routes ---- //
-// Home Page
-let blog = blogBuilder.buildBlog;
-let posts = blog.buildBlogJSON();
+app.use("/blog.json", blogRoute);
+app.use("/single-post.json", singlePostRoute);
 
-app.get('/blog.json', (req, res) => {
-  const pageCount = Math.ceil(posts.length / 4);
-  let page = parseInt(req.query.p);
-  if (!page) {
-    page = 1;
-  }
-  if (page > pageCount) {
-    page = pageCount;
-  }
-  res.json({
-    page: page,
-    pageCount: pageCount,
-    blog: posts.slice(page * 4 - 4, page * 4)
-  });
-});
-
-app.post('/single-post.json', (req, res) => {
-  let blogPostID = req.body;
-  let post = blog.getPostByID(posts, blogPostID.postID);
-  res.json({
-    blog: post
-  })
-})
-
+// ---- Serve index.html on any url (for SPA) ---- //
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
-app.listen(process.env.PORT || 9791);
-console.log('Listening on port 9791');
+// ---- Serve On Port ---- //
+const port = 9791;
+app.listen(process.env.PORT || port);
+console.log(`Listening on port ${port}`);

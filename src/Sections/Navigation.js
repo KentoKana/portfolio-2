@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-router-dom';
 
 function Navigation(props) {
 
@@ -32,7 +33,36 @@ function Navigation(props) {
         },
     ]
 
-    const renderMobileMenuIcon = () => {
+    const NavigationItems = () => {
+        if (props.isRoot && window.location.pathname === "/") {
+            return (
+                navLinks.map((nl, key) => {
+                    return (
+                        <li key={key}>
+                            <AnchorLink
+                                className=''
+                                href={nl.url}
+                                offset={offset}
+                                onClick={handleMobileMenu}
+                            >
+                                {nl.label}
+                            </AnchorLink>
+                        </li>
+                    );
+                })
+            );
+        } else {
+            return (
+                <li>
+                    <Link to="/" onClick={handleMobileMenu}>
+                        <i className="fas fa-home"></i> Back To Home
+                    </Link>
+                </li>
+            )
+        }
+    }
+
+    const MobileMenuIcon = () => {
         if (menuVisible) {
             return (<i className="fas fa-times"></i>);
         } else {
@@ -44,37 +74,14 @@ function Navigation(props) {
         <header className="navigation">
             <nav>
                 <div className="container">
-                    <a href="http://kentokanazawa.com">
+                    <Link to="/" onClick={handleMobileMenu}>
                         <img className="navigation__logo" src="images/logo.png" alt="Web Developer Logo" />
-                    </a>
+                    </Link>
                     <button onClick={handleMobileMenu} className="navigation__hamburger-menu button-primary">
-                        {renderMobileMenuIcon()}
+                        <MobileMenuIcon />
                     </button>
                     <ul className={`navigation__links ${menuVisible ? 'showMobile' : ''}`}>
-                        {
-                            navLinks.map((nl, key) => {
-                                if (nl.onSamePage) {
-                                    return (
-                                        <li key={key}>
-                                            <AnchorLink
-                                                className=''
-                                                href={nl.url}
-                                                offset={offset}
-                                                onClick={handleMobileMenu}
-                                            >
-                                                {nl.label}
-                                            </AnchorLink>
-                                        </li>
-                                    );
-                                } else {
-                                    return (
-                                        <li key={key}>
-                                            <a href={nl.url}>{nl.label}</a>
-                                        </li>
-                                    )
-                                }
-                            })
-                        }
+                        <NavigationItems />
                     </ul>
                 </div>
             </nav>

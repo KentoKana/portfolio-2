@@ -8,6 +8,9 @@ Web Development
 postname--
 My Third Post
 --postname
+featureImage--
+coders.jpg
+--featureImage
 
 
 content--

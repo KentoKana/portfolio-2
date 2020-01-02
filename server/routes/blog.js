@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const blogBuilder = require('../Blog');
+const blog = blogBuilder.buildBlog;
+const posts = blog.buildBlogJSON();
 
-let blog = blogBuilder.buildBlog;
-let posts = blog.buildBlogJSON();
-console.log('hello');
 router.get('/', (req, res) => {
-    // Blog Endpoint
-    const pageCount = Math.ceil(posts.length / 4);
+    const postsPerPage = 3;
+    const pageCount = Math.ceil(posts.length / postsPerPage);
     let page = parseInt(req.query.p);
     if (!page) {
         page = 1;
@@ -18,16 +17,8 @@ router.get('/', (req, res) => {
     res.json({
         page: page,
         pageCount: pageCount,
-        blog: posts.slice(page * 4 - 4, page * 4)
+        blog: posts.slice(page * postsPerPage - postsPerPage, page * postsPerPage)
     });
 });
-
-router.post('/', (req, res) => {
-    let blogPostID = req.body;
-    let post = blog.getPostByID(posts, blogPostID.postID);
-    res.json({
-        blog: post
-    })
-})
 
 module.exports = router;
