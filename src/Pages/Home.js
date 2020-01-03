@@ -5,17 +5,17 @@ import RecentWorks from '../Sections/RecentWorks';
 import About from '../Sections/About';
 import Blog from '../Sections/Blog';
 
-function Home(props) {
+const Home = () => {
 
-    return (
-      <div className="Home">
-        <Banner />
-        <RecentWorks />
-        <Designs />
-        <About />
-        <Blog />
-      </div>
-    );
-  }
-  
-  export default Home;
+  return (
+    <div className="Home">
+      <Banner />
+      <RecentWorks />
+      <Designs />
+      <Blog />
+      <About />
+    </div>
+  );
+}
+
+export default Home;

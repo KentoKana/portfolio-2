@@ -17,6 +17,10 @@
                 align-items: center;
                 img {
                     width: 300px;
+                    &:hover {
+                        filter: brightness(60%);
+                        @include transition-time;
+                    }
                 }
                 @media only screen and (max-width: 910px) {
                     width: 700px;
@@ -44,10 +48,12 @@
                         color: $primary;
                         &:hover {
                             color: darken($primary, 30%);
+                            @include transition-time;
                         }
                     }
                     h2 {
                         margin-top: 0;
+                        font-family: 'open-sans', sans-serif;
                         @media only screen and (max-width: 810px) {
                             margin-top: 1em;
                         }
@@ -57,7 +63,6 @@
                     }
                 }
             }
-            &__pagination {}
         }
     }
 }

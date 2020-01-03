@@ -1,43 +1,40 @@
 import React from 'react';
 
-function SocialButton(props) {
+function SocialButton() {
 
     // Store Link Info
-    let socialMediaLink = [
+    let socialMediaLinks = [
         {
             url: 'http://github.com/kentokana',
-            backgroundColor: '#24292E',
+            backgroundColor: '#fff',
             faIcon: <i className="fab fa-github"></i>,
-            title:'GitHub',
+            title: 'GitHub',
         },
         {
             url: 'https://www.linkedin.com/in/kento-kanazawa-7147b266/',
-            backgroundColor: '#0077B5',
+            backgroundColor: '#fff',
             faIcon: <i className="fab fa-linkedin-in"></i>,
-            title:'LinkedIn',
+            title: 'LinkedIn',
         },
         {
             url: 'https://www.behance.net/tokendesigner/',
-            backgroundColor: '#0057ff',
+            backgroundColor: '#fff',
             faIcon: <i className="fab fa-behance"></i>,
-            title:'Behance',
+            title: 'Behance',
         },
         {
             url: 'http://google.com',
-            backgroundColor: '#F5613C',
+            backgroundColor: '#fff',
             faIcon: <i className="fas fa-envelope"></i>,
-            title:'Contact Me',
+            title: 'Contact Me',
         }
     ]
 
     return (
         <div className="socialLinkBtns__container">
-            {socialMediaLink.map((sml, key) =>
+            {socialMediaLinks.map((sml, key) =>
                 <a
                     className='socialLink__btn'
-                    style={
-                        { backgroundColor: sml.backgroundColor }
-                    }
                     href={sml.url}
                     title={sml.url}
                     target="_blank"

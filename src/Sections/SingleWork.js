@@ -88,13 +88,17 @@ function SingleWork(props) {
                         (
                             <>
                                 <ProgressiveImgComponent />
-                                <TitleAreaComponent />
-                                <ToolsAreaComponent />
+                                <div className="margin-container">
+                                    <TitleAreaComponent />
+                                    <ToolsAreaComponent />
+                                </div>
                             </>
                         )}
                     />
-                    <TextAreaComponent />
-                    <ButtonAreaComponent />
+                    <div className="margin-container">
+                        <TextAreaComponent />
+                        <ButtonAreaComponent />
+                    </div>
                 </div>
                 <div className="single-work__section2">
                     <Media query="(min-width: 739px)" render={() =>

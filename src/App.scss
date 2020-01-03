@@ -1,5 +1,9 @@
 @import 'styles/_colors.scss';
 @import 'styles/_mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Yantramanav&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script&display=swap');
 @import 'styles/_modal.scss';
 @import 'styles/_socialLinkButton.scss';
 @import 'styles/_navigation.scss';
@@ -12,7 +16,6 @@
 @import 'styles/_footer.scss';
 @import 'styles/_pagination.scss';
 @import 'styles/pages/allblog.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 html {
     overflow-y: scroll;
 }
@@ -22,10 +25,24 @@ button {
     border-radius: 0;
 }
 
+h1,
+h3 {
+    font-family: 'Bad Script', cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
 .App {
+    font-family: 'Open Sans', sans-serif;
     position: relative;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
     color: $default-text;
     display: flex;
     flex-direction: column;
@@ -61,6 +78,7 @@ button {
             top: 77px;
             left: 0;
             right: 0;
+            display: none;
         }
     }
 }

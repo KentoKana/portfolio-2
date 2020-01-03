@@ -25,15 +25,22 @@
             @media only screen and (max-width: 710px) {
                 width: 60%;
             }
-            @media only screen and (max-width: 500px) {
-                width: 70%;
+            @media only screen and (max-width: 578px) {
+                width: 100%;
                 margin: 0;
-                &:not(first-child) {
-                    margin-top: 3em;
-                }
+                margin-bottom: 2em;
+            }
+            .text {
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                width: 90%;
+                @include line-height;
             }
             img {
                 width: 100%;
+                display: flex;
+                margin: 0 auto;
                 &:hover {
                     filter: brightness(60%);
                     @include transition-time;
@@ -57,10 +64,9 @@
             }
         }
         .blog__view-all-link {
-            margin: 2em;
-            // width: 100%;
             font-size: 1.5em;
             text-align: center;
+            margin-bottom: 0;
         }
     }
 }

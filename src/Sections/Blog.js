@@ -37,19 +37,23 @@ function Blog() {
 
                                 }}
                             </ProgressiveImage>
-                            <h4>
-                                <Link className="blog__title" to={`/single-blog?id=${blogPosts[p].id}`}>
-                                    {blogPosts[p].postName}
-                                </Link>
-                            </h4>
-                            <em>{getDateFromFileName(blogPosts[p].fileName)}</em>
-                            <p>
-                                {`${blogPosts[p].content.substring(0, 100)}...`}
-                            </p>
-                            <Link to={`/single-blog?id=${blogPosts[p].id}`}>Read More...</Link>
+                            <div className="text">
+                                <h4>
+                                    <Link className="blog__title" to={`/single-blog?id=${blogPosts[p].id}`}>
+                                        {blogPosts[p].postName}
+                                    </Link>
+                                </h4>
+                                <span>{getDateFromFileName(blogPosts[p].fileName)}</span>
+                                <p>
+                                    {`${blogPosts[p].content.substring(0, 100)}...`}
+                                </p>
+                                <Link to={`/single-blog?id=${blogPosts[p].id}`}>Read More...</Link>
+                            </div>
                         </div>
                     )
                 })}
+            </div>
+            <div className="container">
                 <div className="blog__view-all-link">
                     <Link to={'/blog-posts?p=1'}>View All Posts</Link>
                 </div>

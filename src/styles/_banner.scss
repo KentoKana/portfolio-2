@@ -31,12 +31,13 @@ main.banner {
                 h1 {
                     font-size: 4em;
                     font-weight: normal;
-                    width: 300px;
+                    width: 350px;
+                    margin: 0;
                 }
                 h2 {
                     font-weight: normal;
                     width: 300px;
-                    line-height: 1.5em;
+                    @include line-height;
                 }
                 @media only screen and (max-width: 450px) {
                     h1,
@@ -66,7 +67,7 @@ main.banner {
                 flex-direction: column;
                 a {
                     @include primary-link;
-                    line-height: 2em;
+                    @include line-height;
                 }
             }
         }

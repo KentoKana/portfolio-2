@@ -41,6 +41,7 @@ const ImagePlaceholder = (props) => {
                             bottom: '0',
                             alignItems: 'center',
                             textAlign: 'center',
+                            margin: '0 auto'
                         }}
                     />
                 </div>
@@ -57,6 +58,7 @@ const ImagePlaceholder = (props) => {
                         alignItems: 'center',
                         opacity: opacity,
                         textAlign: 'center',
+                        margin: '0 auto'
                     }}
                 >
                     <Loader

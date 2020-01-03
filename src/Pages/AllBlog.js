@@ -51,9 +51,9 @@ const AllBlog = () => {
                                         {blogPosts[p].postName}
                                     </Link>
                                 </h2>
-                                <em>{getDateFromFileName(blogPosts[p].fileName)}</em>
+                                <div>{getDateFromFileName(blogPosts[p].fileName)}</div>
                                 <p>
-                                    {`${blogPosts[p].content.substring(0, 250)}...`}
+                                    {`${blogPosts[p].content.substring(0, 150)}...`}
                                 </p>
                                 <div className="read-more-link-container">
                                     <Link to={`/single-blog?id=${blogPosts[p].id}`}>Read More</Link>
