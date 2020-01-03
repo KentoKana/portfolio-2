@@ -3,14 +3,16 @@
     color: white;
     background-color: $gray-100;
     &:hover {
-        background-color: $gray-200;
+        background-color: darken($gray-100, 10%);
         transition: 0.2s all;
     }
 }
 
 .modalBody {
     min-width: 200px;
-    background-color: $primary;
+    background-color: default;
+    padding: 0;
+    width: 100%;
     .modal-image {
         width: 100%;
     }
@@ -18,4 +20,7 @@
 
 .overlay {
     background: rgba(0, 0, 0, 0.3);
+    @media only screen and (max-width: 500px) {
+        padding: 10px;
+    }
 }

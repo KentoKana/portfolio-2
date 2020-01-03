@@ -100,7 +100,7 @@ function SingleWork(props) {
                         <ButtonAreaComponent />
                     </div>
                 </div>
-                <div className="single-work__section2">
+                <div className="single-work__section2" style={{ height: "242.817px" }}>
                     <Media query="(min-width: 739px)" render={() =>
                         (
                             <>

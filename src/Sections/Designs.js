@@ -71,25 +71,23 @@ const Designs = () => {
         <section className="designs" id="designs">
             <h3 className="designs__heading"><span>Design Works</span></h3>
             <div className="container">
+
                 {
                     designDetails.map((dd, key) => {
                         return (
-                            <React.Fragment key={key}>
-                                <button className="designs__button" onClick={(e) => { onOpenModal(e) }}>
-                                    <ProgressiveImage src={dd.thumbnailImageSrc} placeholder=" ">
-                                        {(src, loading) => {
-                                            return loading ? <ImagePlaceholder height={250} width={250} /> :
-                                                <img
-                                                    src={src}
-                                                    alt={dd.name}
-                                                    data-main-image-src={dd.mainImageSrc}
-                                                    data-image-alt={dd.name}
-                                                />
-                                        }}
-                                    </ProgressiveImage>
-
-                                </button>
-                            </React.Fragment>
+                            <button className="designs__button" onClick={(e) => { onOpenModal(e) }}>
+                                <ProgressiveImage src={dd.thumbnailImageSrc} placeholder=" ">
+                                    {(src, loading) => {
+                                        return loading ? <ImagePlaceholder height={250} width={250} /> :
+                                            <img
+                                                src={src}
+                                                alt={dd.name}
+                                                data-main-image-src={dd.mainImageSrc}
+                                                data-image-alt={dd.name}
+                                            />
+                                    }}
+                                </ProgressiveImage>
+                            </button>
                         );
                     })
                 }
@@ -102,13 +100,12 @@ const Designs = () => {
                 >
                     <ProgressiveImage src={modalContent.imgSrc} placeholder=" ">
                         {(src, loading) => {
-                            return loading ? <ImagePlaceholder height={270} width={270} bgColor="inherit" spinnerColor="white" /> :
+                            return loading ? <ImagePlaceholder height={270} width={270} bgColor="inherit" spinnerColor="gray" /> :
                                 <img className='modal-image' src={src} alt={modalContent.imgAlt} />
                         }}
                     </ProgressiveImage>
                 </Modal>
             </div>
-
         </section>
     );
 }

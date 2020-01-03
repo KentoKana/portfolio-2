@@ -5,12 +5,12 @@ const About = () => {
     return (
         <section className="about" id="about">
             <h3 className="about__heading"><span>About</span></h3>
-            <div className="container">
+            <div className="container" >
                 <div className="section-1">
                     <img src="images/toronto-sketch.jpg" alt="Drawing with Toronto City" />
                 </div>
                 <div className="section-2">
-                    <h4 className="">A Little Bit About Me</h4>
+                    <h4 className="">What I Do</h4>
                     <p>
                         I'm a full stack web developer in Toronto. My interest ranges from designing easy-to-use, aesthetically pleasing user interfaces to building web applications.
                     </p>
@@ -26,7 +26,7 @@ const About = () => {
                             <i className="fab fa-node"></i>
                             <i className="fab fa-php"></i>
                             <i className="fas fa-database"></i>
-                            <i class="fab fa-git-alt"></i>
+                            <i className="fab fa-git-alt"></i>
                         </div>
                     </div>
 

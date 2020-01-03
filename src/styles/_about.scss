@@ -25,19 +25,20 @@
             }
             p {
                 @include line-height;
-                font-size: 1.2em;
+                // font-size: 1.2em;
                 margin: 0;
+                margin-bottom: 2em;
             }
             h4 {
-                font-family: 'Bad Script', sans-serif;
-                font-size: 2em;
+                font-size: 1.4em;
                 margin: 0.5em 0;
+                text-transform: initial;
             }
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
             i {
-                font-size: 3em;
+                font-size: 2em;
                 margin: 0.2em 0;
                 margin-right: 0.5em;
             }

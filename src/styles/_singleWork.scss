@@ -111,14 +111,13 @@
                     display: flex;
                     h4 {
                         margin: 0;
-                        font-size: 4.5em;
+                        font-size: 1.8em;
+                        text-transform: uppercase;
                         @media only screen and (max-width: 1000px) {
                             margin: 0.5em 0;
-                            font-size: 3em;
                         }
                         @media only screen and (max-width: 400px) {
                             margin-bottom: 0;
-                            font-size: 3em;
                         }
                         font-weight: normal;
                         .index {

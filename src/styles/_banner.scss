@@ -33,11 +33,14 @@ main.banner {
                     font-weight: normal;
                     width: 350px;
                     margin: 0;
+                    line-height: 1em;
                 }
                 h2 {
                     font-weight: normal;
-                    width: 300px;
-                    @include line-height;
+                    font-size: 1.2em;
+                    width: 340px;
+                    line-height: 1.5em;
+                    margin-bottom: 2em;
                 }
                 @media only screen and (max-width: 450px) {
                     h1,
