@@ -1,0 +1,24 @@
+.single-blog {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    pre {
+        white-space: pre-line !important;
+        word-wrap: normal !important;
+    }
+    pre code {
+        white-space: inherit !important;
+    }
+    .container {
+        justify-content: center;
+        .single-blog {
+            &__container {
+                width: 80%;
+                @media only screen and (max-width: 578px) {
+                    width: 90%;
+                }
+                max-width: 1000px;
+                // padding: 0 1em;
+            }
+        }
+    }
+}

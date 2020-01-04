@@ -31,7 +31,7 @@ function SingleBlog() {
     return (
       <section className="single-blog">
         <div className="container">
-          <div>
+          <div className="single-blog__container">
             <br />
             <br />
             <br />
