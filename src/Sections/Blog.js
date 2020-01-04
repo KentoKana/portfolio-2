@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProgressiveImage from 'react-progressive-image';
 import ImagePlaceholder from '../UI/ImagePlaceholder';
 import { getDateFromFileName } from '../Helpers/functions';
+
 function Blog() {
 
     let [blogPosts, handleBlogPosts] = useState(false);
@@ -45,7 +46,7 @@ function Blog() {
                                 </h4>
                                 <span>{getDateFromFileName(blogPosts[p].fileName)}</span>
                                 <p>
-                                    {`${blogPosts[p].content.substring(0, 100)}...`}
+                                    {`${blogPosts[p].textSnippet.substring(0, 120)}...`}
                                 </p>
                                 <Link to={`/single-blog?id=${blogPosts[p].id}`}>Read More...</Link>
                             </div>

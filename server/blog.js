@@ -67,6 +67,11 @@ class Blog {
                 rawText.lastIndexOf("\r\n--postname")
             )
 
+            let textSnippet = rawText.substring(
+                rawText.lastIndexOf("\r\ntextSnippet--") + 17,
+                rawText.lastIndexOf("\r\n--textSnippet")
+            )
+
             let featureImage = rawText.substring(
                 rawText.lastIndexOf("\r\nfeatureImage--") + 18,
                 rawText.lastIndexOf("\r\n--featureImage")
@@ -80,6 +85,7 @@ class Blog {
                 postName: postname,
                 featureImage: featureImage,
                 tags: tags,
+                textSnippet: textSnippet,
                 content: content
             };
 

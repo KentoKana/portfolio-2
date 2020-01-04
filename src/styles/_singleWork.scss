@@ -43,6 +43,7 @@
 }
 
 .single-work {
+    margin: 2em 0;
     display: flex;
     &:nth-child(odd) {
         background-color: $gray-100;

@@ -32,7 +32,8 @@ h3 {
 }
 
 h2,
-h4 {
+h4,
+h5 {
     font-family: 'Slabo 27px', serif;
 }
 
@@ -40,14 +41,6 @@ h4 {
     text-transform: uppercase;
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     font-weight: normal;
-// }
 .App {
     font-family: 'Source Sans Pro', sans-serif;
     position: relative;
@@ -89,5 +82,16 @@ h4 {
             right: 0;
             display: none;
         }
+    }
+}
+
+.underline--magical {
+    background-image: linear-gradient(120deg, #b43535 0%, #bb3333 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.1em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+    &:hover {
+        background-size: 100% 88%;
     }
 }
