@@ -13,7 +13,13 @@
         }
     }
     @media only screen and (max-width: 801px) {
-        top: 70px;
+        top: calc(70px - 26.6667px);
+        &.isScrolling {
+            top: 70px;
+        }
+        &:hover {
+            top: 70px;
+        }
     }
     width: 100%;
     z-index: 6;

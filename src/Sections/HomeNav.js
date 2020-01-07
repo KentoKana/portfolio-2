@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { homeNavLinks } from "../Helpers/Data";
 
 const HomeNav = () => {
-  let offset = 110;
+  const offset = 110;
+  const [homeNavClassName, setHomeNavClassName] = useState("homeNav");
+
+  useEffect(() => {
+    window.addEventListener("scroll", e => {
+      setHomeNavClassName("homeNav isScrolling");
+    });
+  }, []);
+
+  if (homeNavClassName === "homeNav isScrolling") {
+    setTimeout(() => {
+      setHomeNavClassName("homeNav");
+    }, 2000);
+  }
 
   return (
-    <nav className="homeNav">
+    <nav className={homeNavClassName}>
       <div className="container">
         <ul>
           {homeNavLinks.map((nl, key) => {
