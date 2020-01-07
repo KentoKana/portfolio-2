@@ -2,9 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "../Helpers/CodeBlock";
+import { getDateFromFileName } from "../Helpers/functions";
 
 function SingleBlog() {
   let [blogPost, handleBlogPost] = useState(false);
+
+  let prevPageNum;
+  if (localStorage.getItem("prevPage")) {
+    prevPageNum = localStorage.getItem("prevPage");
+  }
+
+  // If the prevPage localStorage item is not set (i.e. is NaN), set set Item.
+  if (isNaN(localStorage.getItem("prevPage"))) {
+    localStorage.setItem("prevPage", 1);
+  }
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -27,27 +38,34 @@ function SingleBlog() {
   }, []);
 
   if (blogPost) {
-    let postObj = blogPost;
     return (
       <section className="single-blog">
         <div className="container">
           <div className="single-blog__container">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <Link to="/">Back To Home</Link>
-            <h2>{postObj.postName}</h2>
             <div>
-              <p>
-                <em>Written By {postObj.author}</em>
-              </p>
+              <div
+                className="single-blog__feature-image"
+                style={{
+                  backgroundImage: `url('images/blog/${blogPost.featureImage}')`
+                }}
+              >
+                <h1>{blogPost.postName}</h1>
+                <h2>{getDateFromFileName(blogPost.fileName)}</h2>
+                <h2>Written By {blogPost.author}</h2>
+              </div>
+
+              <ReactMarkdown
+                source={blogPost.content}
+                renderers={{ code: CodeBlock }}
+              />
             </div>
-            <ReactMarkdown
-              source={postObj.content}
-              renderers={{ code: CodeBlock }}
-            />
+
+            <Link
+              className="back-to-home-link"
+              to={`/blog-posts?p=${prevPageNum}`}
+            >
+              <i className="fas fa-arrow-left"></i> Back To Blog List
+            </Link>
           </div>
         </div>
       </section>

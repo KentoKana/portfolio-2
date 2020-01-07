@@ -8,9 +8,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1em 0;
+        padding: 5px 0;
         @media only screen and (max-width: 1024px) {
-            padding: 0em;
+            // padding: 0em;
         }
         .navigation {
             display: flex;
@@ -63,7 +63,9 @@
                         animation-iteration-count: 1;
                     }
                 }
-                font-size: 1.1em;
+                font-size: 1.3em;
+                font-family: 'Bad Script',
+                sans-serif;
                 padding: 0;
                 margin: 0;
                 list-style-type: none;
