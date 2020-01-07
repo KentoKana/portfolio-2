@@ -1,0 +1,24 @@
+._404 {
+    .container {
+        min-height: 78vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3em 2em;
+        text-align: center;
+        h1 {
+            font-size: 5em;
+        }
+        p {
+            font-size: 2em;
+            font-family: 'Slabo 27px', sans-serif;
+        }
+        a {
+            color: $primary;
+            font-size: 1.5em;
+            &:hover {
+                color: darken($primary, 30%);
+            }
+        }
+    }
+}

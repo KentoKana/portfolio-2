@@ -81,11 +81,16 @@ const AllBlog = () => {
             </div>
           );
         })}
-        <Pagination
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-          pageCount={pageCount}
-        />
+        <div className="bottom-section">
+          <Link className="back-to-home-link" to={`/`}>
+            <i className="fas fa-arrow-left"></i> Back To Home
+          </Link>
+          <Pagination
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            pageCount={pageCount}
+          />
+        </div>
       </div>
     </main>
   );

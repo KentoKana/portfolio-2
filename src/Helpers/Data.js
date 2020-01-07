@@ -2,6 +2,10 @@ import React from "react";
 
 export const homeNavLinks = [
   {
+    label: "Top",
+    url: "#top"
+  },
+  {
     label: "Development",
     url: "#development"
   },
@@ -26,11 +30,11 @@ export const homeNavLinks = [
 export const navLinks = [
   {
     label: "Home",
-    url: "/",
+    url: "/"
   },
   {
     label: "Blog",
-    url: "/blog-posts?p=1",
+    url: "/blog-posts?p=1"
   }
 ];
 

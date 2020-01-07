@@ -66,5 +66,29 @@
                 }
             }
         }
+        .bottom-section {
+            width: 100%;
+            max-width: 800px;
+            @media only screen and (max-width: 910px) {
+                max-width: 700px;
+            }
+            @media only screen and (max-width: 810px) {
+                max-width: 400px;
+            }
+            @media only screen and (max-width: 578px) {
+                max-width: 520px;
+                width: 90%;
+            }
+            flex-direction: row;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            .back-to-home-link {
+                color: $primary;
+                &:hover {
+                    color: darken($primary, 30%);
+                }
+            }
+        }
     }
 }

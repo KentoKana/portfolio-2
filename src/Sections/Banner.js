@@ -3,7 +3,7 @@ import React from 'react';
 function Banner() {
 
     return (
-        <main className="banner">
+        <main className="banner" id="top">
             <div className="container">
                 <div className="banner__text">
                     <h1>I'm <span className="primary">Kento</span>.</h1>

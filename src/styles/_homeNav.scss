@@ -3,6 +3,15 @@
     background-color: #fff;
     position: fixed;
     top: 62.5176px;
+    color: $primary;
+    @include transition-time;
+    &:hover {
+        background-color: $primary;
+        @include transition-time;
+        a {
+            color: #fff;
+        }
+    }
     @media only screen and (max-width: 801px) {
         top: 70px;
     }
@@ -20,9 +29,8 @@
             a {
                 margin-right: 5px;
                 color: $primary;
-                text-decoration: underline;
                 &:hover {
-                    color: darken($primary, 30%);
+                    color: rgb(255, 242, 170);
                     @include transition-time;
                 }
             }
