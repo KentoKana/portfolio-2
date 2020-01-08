@@ -42,30 +42,28 @@ function SingleBlog() {
       <section className="single-blog">
         <div className="container">
           <div className="single-blog__container">
-            <div>
-              <div
-                className="single-blog__feature-image"
-                style={{
-                  backgroundImage: `url('images/blog/${blogPost.featureImage}')`
-                }}
-              >
-                <h1>{blogPost.postName}</h1>
-                <h2>{getDateFromFileName(blogPost.fileName)}</h2>
-                <h2>Written By {blogPost.author}</h2>
-              </div>
-
+            <div
+              className="single-blog__feature-image"
+              style={{
+                backgroundImage: `url('images/blog/${blogPost.featureImage}')`
+              }}
+            >
+              <h1>{blogPost.postName}</h1>
+              <h2>{getDateFromFileName(blogPost.fileName)}</h2>
+              <h2>Written By {blogPost.author}</h2>
+            </div>
+            <div className="text-area">
               <ReactMarkdown
                 source={blogPost.content}
                 renderers={{ code: CodeBlock }}
               />
+              <Link
+                className="back-to-home-link"
+                to={`/blog-posts?p=${prevPageNum}`}
+              >
+                <i className="fas fa-arrow-left"></i> Back To Blog List
+              </Link>
             </div>
-
-            <Link
-              className="back-to-home-link"
-              to={`/blog-posts?p=${prevPageNum}`}
-            >
-              <i className="fas fa-arrow-left"></i> Back To Blog List
-            </Link>
           </div>
         </div>
       </section>

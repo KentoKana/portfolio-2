@@ -23,7 +23,6 @@ const HomeNav = () => {
       <div className="container">
         <ul>
           {homeNavLinks.map((nl, key) => {
-            console.log(homeNavLinks.length);
             let isLastItem;
             if (homeNavLinks.length - 1 === key) {
               isLastItem = true;

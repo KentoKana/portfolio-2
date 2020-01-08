@@ -25,5 +25,5 @@ export const getDateFromFileName = fileName => {
     // E.g. Dec 12, 2019
     return `${month[date[1]]} ${date[2]}, ${date[0]}`;
   }
-  return "Loading Date ...";
+  return "Loading..."
 };
