@@ -160,7 +160,7 @@ Here's a "line block" (note how whitespace is honored):
 
 and images can be specified like so:
 
-![example image](example-image.jpg "An exemplary image")
+![example image](images/blog/coders.jpg "An exemplary image")
 
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
