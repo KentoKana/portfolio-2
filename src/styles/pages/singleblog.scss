@@ -3,18 +3,19 @@
     font-weight: normal;
     min-height: 100vh;
     margin-top: 84.5167px;
-    pre {
-        white-space: pre-line !important;
-        word-wrap: normal !important;
+    h3,
+    h4,
+    h5 {
+        font-family: 'Slabo 27px', sans-serif;
     }
-    pre code {
-        white-space: inherit !important;
+    pre {
+        word-wrap: normal !important;
     }
     .container {
         flex-direction: column;
         align-items: center;
         img {
-            width: 100%;
+            max-width: 100%;
         }
         .single-blog {
             &__feature-image {
@@ -47,8 +48,41 @@
                 }
             }
             &__container {
-                width: 80%;
-                margin-bottom: 2em;
+                width: 70%;
+                margin-bottom: 1.5em;
+                .text-area {
+                    p {
+                        font-size: 1.2em;
+                        line-height: 1.8em;
+                    }
+                    h3 {
+                        font-size: 2em;
+                    }
+                    h4 {
+                        font-size: 1.5em;
+                    }
+                    h5 {
+                        font-size: 1.3em;
+                    }
+                    a {
+                        &.internalLink {
+                            color: $primary;
+                            text-decoration: underline;
+                            &:hover {
+                                color: darken($primary, 30%);
+                                @include transition-time;
+                            }
+                        }
+                        &.externalLink {
+                            color: rgb(41, 45, 104);
+                            text-decoration: underline;
+                            &:hover {
+                                color: lighten(rgb(41, 45, 104), 20%);
+                                @include transition-time;
+                            }
+                        }
+                    }
+                }
                 @media only screen and (max-width: 578px) {
                     width: 100%;
                     display: flex;

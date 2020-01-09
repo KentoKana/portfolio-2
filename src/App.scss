@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
 @import 'styles/_modal.scss';
 @import 'styles/_socialLinkButton.scss';
 @import 'styles/_navigation.scss';
@@ -37,10 +38,6 @@ h2,
 h4,
 h5 {
     font-family: 'Slabo 27px', serif;
-}
-
-h4 {
-    text-transform: uppercase;
 }
 
 .App {

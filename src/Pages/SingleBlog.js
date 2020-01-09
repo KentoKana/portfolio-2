@@ -55,7 +55,27 @@ function SingleBlog() {
             <div className="text-area">
               <ReactMarkdown
                 source={blogPost.content}
-                renderers={{ code: CodeBlock }}
+                renderers={{
+                  code: CodeBlock,
+                  link: props => {
+                    // Logic to open external links with a new tab.
+                    if (window.location.href.includes(props.href)) {
+                      return <a className="internalLink" href={props.href}>{props.children}</a>;
+                    } else {
+                      return (
+                        <a
+                          className="externalLink"
+                          href={props.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {props.children}
+                        </a>
+                      );
+                    }
+                  }
+                }}
+                escapeHtml={false}
               />
               <Link
                 className="back-to-home-link"
