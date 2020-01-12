@@ -1,12 +1,12 @@
 Portfolio Ver. 2
 ---
 [https://portfolio-new.kentokanazawa.com](https://portfolio-new.kentokanazawa.com)
-***
+---
 
 ### Stack:
   * `React`
   * `Node/ExpressJS`
----
+--- 
 
 ### Notable Features:
 * Blog platform built with `Markdown(.md)`
@@ -14,7 +14,6 @@ Portfolio Ver. 2
 * Asynchronous data handling using Fetch API and React when consuming the blog JSON data. 
 * Back-end pagination feature & pagination UI built with React.
 * Attention to details for UI/UX.
-
 ---
 
 ### Work In Progress (As of January 11 2020):
