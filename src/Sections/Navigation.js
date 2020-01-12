@@ -53,16 +53,15 @@ function Navigation(props) {
             <Media
               query="(max-width: 578px)"
               render={() => (
-                <li>
+                <li>  
                   <ul className="mobile-social-link">
                     {socialMediaLinks.map((sml, key) => (
-                      <li>
+                      <li key={key}>
                         <a
                           href={sml.url}
                           title={sml.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          key={key}
                         >
                           {sml.faIcon}
                         </a>

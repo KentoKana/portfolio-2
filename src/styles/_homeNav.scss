@@ -2,7 +2,7 @@
     position: absolute;
     background-color: #fff;
     position: fixed;
-    top: 62.5176px;
+    top: 59.5176px;
     color: $primary;
     @include transition-time;
     &:hover {
@@ -15,11 +15,8 @@
     @media only screen and (max-width: 801px) {
         top: calc(70px - 26.6667px);
         &.isScrolling {
-            top: 70px;
+            top: 67px;
         }
-        // &:hover {
-        //     top: 70px;
-        // }
     }
     width: 100%;
     z-index: 6;

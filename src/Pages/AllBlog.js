@@ -13,7 +13,7 @@ const AllBlog = () => {
   let [pageCount, getPageCount] = useState(false);
   let [currentPage, setCurrentPage] = useState(pageNum);
   useEffect(() => {
-    fetch(`http://portfolio-new.kentokanazawa.com/blog.json?p=${currentPage}`)
+    fetch(`https://portfolio-new.kentokanazawa.com/blog.json?p=${currentPage}`)
       .then(response => response.json())
       .then(data => {
         getPageCount(data.pageCount);

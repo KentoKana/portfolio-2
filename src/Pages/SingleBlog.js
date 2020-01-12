@@ -20,7 +20,7 @@ function SingleBlog() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const postID = parseInt(urlParams.get("id"));
-    fetch("http://portfolio-new.kentokanazawa.com/single-post.json/", {
+    fetch("https://portfolio-new.kentokanazawa.com/single-post.json/", {
       method: "POST",
       headers: {
         Accept: "application/json",

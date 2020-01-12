@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     img {
-        width: 100%;
+        width: 400px;
         @media only screen and (max-width: 1000px) {
             width: 400px;
         }
@@ -11,6 +11,7 @@
             width: 300px;
         }
         @media only screen and (max-width: 740px) {
+            max-width: 400px;
             width: 100%;
             display: flex;
             margin: 0 auto;

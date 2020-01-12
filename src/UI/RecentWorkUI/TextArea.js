@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 const TextArea = ({description, learnMoreUrl}) => {
   return (
     <>
@@ -6,9 +8,9 @@ const TextArea = ({description, learnMoreUrl}) => {
         <p>{description}</p>
       </div>
       <div className="learn-more-link-container">
-        <a className="learn-more-link" href={learnMoreUrl}>
+        <Link className="learn-more-link" to={learnMoreUrl}>
           Learn More
-        </a>
+        </Link>
       </div>
     </>
   );

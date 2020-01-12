@@ -67,6 +67,19 @@ export const socialMediaLinks = [
 
 export const projectDetails = [
   {
+    name: "Markdown Blog Platform",
+    description:
+      "I created a database-less blog system using JSON API served through Express. Markdown files are used to write the blog posts, which are then read by the Express app to serve a JSON API endpoint. There is a back-end pagination system to serve a portion of the blog posts at a time, which is consumed using React and Fetch API. Markdown syntax is converted into HTML using the react-markdown package.",
+    liveUrl: "http://portfolio-new.kentokanazawa.com/blog-posts",
+    gitHubUrl: "http://google.com",
+    learnMoreUrl: "/single-blog?id=4",
+    toolsUsed: ["ReactJS", "NodeJS & ExpressJS", "Custom JSON API Endpoint"],
+    imageSrc: {
+      main: "images/projects/md-blog.gif",
+      thumbnail: "images/projects/thumbnails/md-blog.png"
+    }
+  },
+  {
     name: "Guess The Location",
     description:
       "This my take on the popular game, GeoGuessr. This project uses Nominatim GeoCoder, Country.io, and Google APIs, and is consumed using React and Axios. The app randomly selects a street-view available latitude and longitude coordinate, and asks the player to guess the target location by searching for clues in the street-view.",
