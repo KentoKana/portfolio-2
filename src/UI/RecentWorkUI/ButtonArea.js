@@ -8,10 +8,17 @@ const ButtonArea = ({ liveUrl, gitHubUrl }) => {
         href={liveUrl}
         target="_blank"
         rel="noopener noreferrer"
+        title="View Live Site"
       >
         View Live Site
       </a>
-      <a className="button-primary" href={gitHubUrl}>
+      <a
+        className="button-primary"
+        href={gitHubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="View Code"
+      >
         View Code
       </a>
     </div>

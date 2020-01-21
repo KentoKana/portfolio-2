@@ -58,7 +58,7 @@ export const socialMediaLinks = [
     title: "Behance"
   },
   {
-    url: "http://google.com",
+    url: "mailto:kento@kentokanazawa.com?Subject=Hello",
     backgroundColor: "#fff",
     faIcon: <i className="fas fa-envelope"></i>,
     title: "Contact Me"
@@ -67,16 +67,42 @@ export const socialMediaLinks = [
 
 export const projectDetails = [
   {
+    name: "Custom Gatsby Theme",
+    description:
+      "A custom static website theme built using GatsbyJS, and GraphQL (which ships with Gatsby). This theme can toggle between dark and light mode, is fully responsive, and allows for flexible content management through the use of JSON and Markdown files. GraphQL is used to query only the data needed for each component. After cleaning up the code and writing up the documentation, I plan on releasing this theme on NPM as a Gatsby starter theme.",
+    liveUrl: "http://gatsby-coffee.kentokanazawa.com/",
+    gitHubUrl: "https://github.com/KentoKana/gatsby-coffee-site",
+    learnMoreUrl: "/single-blog?id=1",
+    toolsUsed: ["ReactJS", "GatsbyJS", "GraphQL", "Sass"],
+    imageSrc: {
+      main: "images/projects/gatsby-theme.gif",
+      thumbnail: "images/projects/thumbnails/gatsby-theme.png"
+    }
+  },
+  {
     name: "Markdown Blog Platform",
     description:
       "I created a database-less blog system using JSON API served through Express. Markdown files are used to write the blog posts, which are then read by the Express app to serve a JSON API endpoint. There is a back-end pagination system to serve a portion of the blog posts at a time, which is consumed using React and Fetch API. Markdown syntax is converted into HTML using the react-markdown package.",
     liveUrl: "http://portfolio-new.kentokanazawa.com/blog-posts",
     gitHubUrl: "http://google.com",
-    learnMoreUrl: "/single-blog?id=4",
+    learnMoreUrl: "/single-blog?id=0",
     toolsUsed: ["ReactJS", "NodeJS & ExpressJS", "Custom JSON API Endpoint"],
     imageSrc: {
       main: "images/projects/md-blog.gif",
       thumbnail: "images/projects/thumbnails/md-blog.png"
+    }
+  },
+  {
+    name: "Enter the Codegeon",
+    description:
+      "As part of an academic project, I worked with 2 other classmates to build a game aimed to teach kids about logical thinking. I was responsible for the back-end logic, which involved building CRUD features (including form validations) for users with MongoDB, as well as passing necessary information to the game board.",
+    liveUrl: "http://enter-the-codegeon.raymondgiang.com/",
+    gitHubUrl: "https://github.com/KentoKana/enter-the-codegeon",
+    learnMoreUrl: "/single-blog?id=2",
+    toolsUsed: ["PHP", "MongoDB"],
+    imageSrc: {
+      main: "images/projects/enter-the-codegeon.gif",
+      thumbnail: "images/projects/thumbnails/enter-the-codegeon.png"
     }
   },
   {
@@ -125,23 +151,8 @@ export const designDetails = [
     mainImageSrc: "images/projects/assistive-tech-company-design.png"
   },
   {
-    name: "Helen B. Physiotherapist Portfolio",
-    thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
-    mainImageSrc: "images/projects/helen-portfolio.png"
+    name: "Clinic Template Web Design",
+    thumbnailImageSrc: "images/projects/thumbnails/clinic-template-design.png",
+    mainImageSrc: "images/projects/clinic-template-design.png"
   },
-  {
-    name: "Helen B. Physiotherapist Portfolio",
-    thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
-    mainImageSrc: "images/projects/helen-portfolio.png"
-  },
-  {
-    name: "Helen B. Physiotherapist Portfolio",
-    thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
-    mainImageSrc: "images/projects/helen-portfolio.png"
-  },
-  {
-    name: "Helen B. Physiotherapist Portfolio",
-    thumbnailImageSrc: "images/projects/thumbnails/helen-portfolio.png",
-    mainImageSrc: "images/projects/helen-portfolio.png"
-  }
 ];

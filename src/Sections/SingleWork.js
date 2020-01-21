@@ -20,23 +20,27 @@ function SingleWork(props) {
 
   const ProgressiveImgComponent = () => {
     return (
-      <ProgressiveImage src={imageSrc} placeholder="">
-        {(src, loading) => {
-          return loading ? (
-            <ImagePlaceholder
-              placeholderImg={props.imageSrc.thumbnail}
-              spinnerColor="#fff"
-            />
-          ) : (
-            <img
-              src={src}
-              alt={props.projectName}
-              onMouseEnter={handleMouseOver}
-              onMouseLeave={handleMouseOut}
-            />
-          );
-        }}
-      </ProgressiveImage>
+      <div style={{ minHeight: "200px" }}>
+        <ProgressiveImage src={imageSrc} placeholder="">
+          {(src, loading) => {
+            return loading ? (
+              <ImagePlaceholder
+                placeholderImg={props.imageSrc.thumbnail}
+                spinnerColor="#fff"
+              />
+            ) : (
+              <img
+                src={src}
+                alt={props.projectName}
+                onMouseEnter={handleMouseOver}
+                onMouseLeave={handleMouseOut}
+                onTouchStart={handleMouseOver}
+                onTouchCancel={handleMouseOut}
+              />
+            );
+          }}
+        </ProgressiveImage>
+      </div>
     );
   };
 
@@ -73,7 +77,7 @@ function SingleWork(props) {
             <ButtonArea liveUrl={props.liveUrl} gitHubUrl={props.gitHubUrl} />
           </div>
         </div>
-        <div className="single-work__section2" style={{ height: "242.817px" }}>
+        <div className="single-work__section2">
           <Media
             query="(min-width: 739px)"
             render={() => (

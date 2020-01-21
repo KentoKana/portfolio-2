@@ -19,17 +19,8 @@ const ImagePlaceholder = props => {
             className="placeholderImg"
             src={props.placeholderImg}
             alt="place holder"
-          />
-          <div
-            style={{
-              backgroundColor: "lightgray",
-              width: "100%",
-              height: "98%",
-              position: "absolute",
-              top: "0",
-              opacity: "0.5",
-              maxWidth: "400px"
-            }}
+            style={{ filter: "brightness(50%)",
+            maxWidth: "400px" }}
           />
           <Loader
             type="ThreeDots"

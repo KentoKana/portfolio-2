@@ -38,8 +38,13 @@ function Blog() {
                     <Link
                       className="blog__title"
                       to={`/single-blog?id=${blogPosts[p].id}`}
+                      style={{ overflow: "hidden" }}
                     >
-                      <img src={src} alt={blogPosts[p].postName} />
+                      <img
+                        src={src}
+                        alt={blogPosts[p].postName}
+                        style={{ height: "150px", objectFit:"cover" }}
+                      />
                     </Link>
                   );
                 }}

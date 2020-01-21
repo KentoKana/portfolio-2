@@ -21,9 +21,13 @@ export const getDateFromFileName = fileName => {
     month[11] = "Nov";
     month[12] = "Dec";
 
+    if (date[1].startsWith("0")) {
+      date[1] = date[1].replace("0", "");
+    }
+
     // Returns string in "Month Date, Year" format.
     // E.g. Dec 12, 2019
     return `${month[date[1]]} ${date[2]}, ${date[0]}`;
   }
-  return "Loading..."
+  return "Loading...";
 };
