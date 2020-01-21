@@ -106,6 +106,19 @@ export const projectDetails = [
     }
   },
   {
+    name: "Portfolio Version 1",
+    description:
+      "This is my very first portfolio website built with ReactJS while I was studying web development at Humber College in Toronto. The layout was built using the React Bootstrap NPM package. The portfolio focused on ease of use, as practicing my ability to work with React effectively.",
+    liveUrl: "http://kentokanazawa.com",
+    gitHubUrl: "https://github.com/KentoKana/portfolio",
+    learnMoreUrl: "",
+    toolsUsed: ["ReactJS", "React Bootstrap"],
+    imageSrc: {
+      main: "images/projects/portfolio-version1.gif",
+      thumbnail: "images/projects/thumbnails/portfolio-version1.png"
+    }
+  },
+  {
     name: "Guess The Location",
     description:
       "This my take on the popular game, GeoGuessr. This project uses Nominatim GeoCoder, Country.io, and Google APIs, and is consumed using React and Axios. The app randomly selects a street-view available latitude and longitude coordinate, and asks the player to guess the target location by searching for clues in the street-view.",
@@ -126,11 +139,11 @@ export const projectDetails = [
   {
     name: "XML Chat Application",
     description:
-      "A chat application powered by XML, jQuery and PHP. Chat is information is stored as XML. I implemented a basic login system, with the login credentials stored in a separate xml file as well. The login credentials are hashed, and basic validation is also implemented at the time of login.",
-    liveUrl: "http://google.com",
-    gitHubUrl: "http://google.com",
-    learnMoreUrl: "http://google.com",
-    toolsUsed: ["XML", "AJAX", "jQuery", "PHP"],
+      "A chat application powered by XML, jQuery and PHP. Chat is information is stored as XML. I implemented a basic login system, with the login credentials stored within a `Users` XML file. The login credentials are hashed, and basic validation is also implemented at the time of login. JQuery Ajax is used to asynchronously update the chat information, both in posting and retrieving message information. Please try this website using these credentials - Username: Kento; Password: kento",
+    liveUrl: "http://xml-chat-app.kentokanazawa.com/",
+    gitHubUrl: "https://github.com/KentoKana/xml-chat-application",
+    learnMoreUrl: "",
+    toolsUsed: ["XML", "AJAX", "jQuery", "PHP", "PHP Sessions"],
     imageSrc: {
       main: "images/projects/xml-chat-app.gif",
       thumbnail: "images/projects/thumbnails/xml-chat-app.png"
@@ -155,4 +168,9 @@ export const designDetails = [
     thumbnailImageSrc: "images/projects/thumbnails/clinic-template-design.png",
     mainImageSrc: "images/projects/clinic-template-design.png"
   },
+  {
+    name: "Portfolio Version 2",
+    thumbnailImageSrc: "images/projects/thumbnails/portfolio-version2-design.png",
+    mainImageSrc: "images/projects/portfolio-version2-design.png"
+  }
 ];
