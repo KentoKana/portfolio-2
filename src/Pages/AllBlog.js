@@ -14,7 +14,7 @@ const AllBlog = () => {
   let [pageCount, getPageCount] = useState(false);
   let [currentPage, setCurrentPage] = useState(pageNum);
   useEffect(() => {
-    fetch(`https://portfolio-new.kentokanazawa.com/blog.json?p=${currentPage}`)
+    fetch(`https://kentokanazawa.com/blog.json?p=${currentPage}`)
       .then(response => response.json())
       .then(data => {
         getPageCount(data.pageCount);
@@ -31,13 +31,13 @@ const AllBlog = () => {
 
   return (
     <main className="blogPosts">
-      <ScrollAnimation animateOnce={true} animateIn={"fadeInLeft"}>
+      <ScrollAnimation animateOnce={true} animateIn={"fadeIn"}>
         <h1 className="blogPosts__heading">
           <span>Recent Blog Posts</span>
         </h1>
       </ScrollAnimation>
       <div className="container">
-        <ScrollAnimation animateOnce={true} animateIn={"fadeInLeft"}>
+        <ScrollAnimation animateOnce={true} animateIn={"fadeIn"}>
           {Object.keys(blogPosts).map((p, key) => {
             return (
               <div className="blogPosts__content" key={key}>

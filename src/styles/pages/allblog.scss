@@ -68,6 +68,7 @@
         .bottom-section {
             width: 100%;
             max-width: 800px;
+            margin: 0 auto;
             @media only screen and (max-width: 910px) {
                 max-width: 700px;
             }

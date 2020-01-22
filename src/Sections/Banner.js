@@ -9,26 +9,30 @@ const Banner = () => {
           <h1>
             I'm <span className="primary">Kento</span>.
           </h1>
-          <h2>A Toronto Based Full Stack Developer & Web Designer.</h2>
+          <h2>I'm a full stack developer and a web designer based in Toronto, with a focus on building applications that are both accessible and easy-to-use.</h2>
           <div className="banner__links">
             <div>
-              <a href="http://google.com">
-                <i className="fas fa-file"></i> View Resume
+              <a href="/Resume.pdf" target="_blank" rel="nofollow noreferrer" className="button-primary">
+                <i className="fas fa-file"></i> Download Resume
               </a>
             </div>
             <div>
-              <AnchorLink className="" href="#development" offset={100}>
+              <AnchorLink
+                href="#development"
+                offset={100}
+                className="button-primary"
+              >
                 <i className="fas fa-pencil-ruler"></i> View Portfolio
               </AnchorLink>
             </div>
           </div>
         </div>
-        <div className="banner__image">
+        {/* <div className="banner__image">
           <img
             src="images/toronto-sketch.jpg"
             alt="Drawing with Toronto City"
           />
-        </div>
+        </div> */}
       </div>
     </main>
   );

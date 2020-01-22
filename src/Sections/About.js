@@ -16,9 +16,9 @@ const About = () => {
         <div className="section-2">
           <h4 className="">What I Do</h4>
           <p>
-            I'm a full stack web developer in Toronto. My interest ranges from
-            designing easy-to-use, aesthetically pleasing user interfaces to
-            building web applications.
+            My interest ranges from designing easy-to-use, aesthetically pleasing user interfaces to
+            building web applications. I enjoy reading up on development trends and keeping an eye out
+            for new ways of building applications.
           </p>
           <div className="skills">
             <h4>Tools/Concepts I'm Familiar With</h4>
@@ -34,10 +34,10 @@ const About = () => {
               <i className="fas fa-database" title="MySQL/MongoDB"></i>
               <i className="fab fa-git-alt" title="Git Version Control"></i>
               <i className="fab fa-npm" title="Node Package Manager"></i>
-              <i class="fab fa-ubuntu" title="Ubuntu/BASH"></i>
-              <i class="fab fa-digital-ocean" title="Digital Ocean"></i>
+              <i className="fab fa-ubuntu" title="Ubuntu/BASH"></i>
+              <i className="fab fa-digital-ocean" title="Digital Ocean"></i>
               <i
-                class="fab fa-accessible-icon"
+                className="fab fa-accessible-icon"
                 title="Web Content Accessibility Guidelines 2.0 Level AA"
               ></i>
             </div>

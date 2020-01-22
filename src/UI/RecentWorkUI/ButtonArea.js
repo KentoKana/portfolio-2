@@ -10,7 +10,7 @@ const ButtonArea = ({ liveUrl, gitHubUrl }) => {
         rel="noopener noreferrer"
         title="View Live Site"
       >
-        <i class="fas fa-globe"></i> View Live Site
+        <i className="fas fa-globe"></i> View Live Site
       </a>
       <a
         className="button-primary"
