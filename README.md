@@ -17,7 +17,7 @@ Portfolio Ver. 2
 ---
 
 ### Work In Progress (As of January 11 2020):
-*  Designs including landing page background and page logo.
+*  ~~Designs including landing page background and page logo.~~
 * Browser testing on iOS.
-* Content migration.
+* ~~Content migration.~~
 * Accessibility considerations using ARIAs 
