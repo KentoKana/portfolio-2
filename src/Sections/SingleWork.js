@@ -6,6 +6,7 @@ import ButtonArea from "../UI/RecentWorkUI/ButtonArea";
 import TitleArea from "../UI/RecentWorkUI/TitleArea";
 import ToolsArea from "../UI/RecentWorkUI/ToolsArea";
 import TextArea from "../UI/RecentWorkUI/TextArea";
+import ScrollAnimation from "react-animate-on-scroll";
 
 function SingleWork(props) {
   let [imageSrc, toggleImgSrc] = useState(props.imageSrc.thumbnail);
@@ -48,34 +49,39 @@ function SingleWork(props) {
     <div className="single-work">
       <div className="container">
         <div className="single-work__section1">
-          <Media
-            query="(min-width: 739px)"
-            render={() => (
-              <TitleArea index={props.index} projectName={props.projectName} />
-            )}
-          />
-          <Media
-            query="(max-width: 740px)"
-            render={() => (
-              <>
-                <ProgressiveImgComponent />
-                <div className="margin-container">
-                  <TitleArea
-                    index={props.index}
-                    projectName={props.projectName}
-                  />
-                  <ToolsArea toolsUsed={props.toolsUsed} />
-                </div>
-              </>
-            )}
-          />
-          <div className="margin-container">
-            <TextArea
-              description={props.description}
-              learnMoreUrl={props.learnMoreUrl}
+          <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+            <Media
+              query="(min-width: 739px)"
+              render={() => (
+                <TitleArea
+                  index={props.index}
+                  projectName={props.projectName}
+                />
+              )}
             />
-            <ButtonArea liveUrl={props.liveUrl} gitHubUrl={props.gitHubUrl} />
-          </div>
+            <Media
+              query="(max-width: 740px)"
+              render={() => (
+                <>
+                  <ProgressiveImgComponent />
+                  <div className="margin-container">
+                    <TitleArea
+                      index={props.index}
+                      projectName={props.projectName}
+                    />
+                    <ToolsArea toolsUsed={props.toolsUsed} />
+                  </div>
+                </>
+              )}
+            />
+            <div className="margin-container">
+              <TextArea
+                description={props.description}
+                learnMoreUrl={props.learnMoreUrl}
+              />
+              <ButtonArea liveUrl={props.liveUrl} gitHubUrl={props.gitHubUrl} />
+            </div>
+          </ScrollAnimation>
         </div>
         <div className="single-work__section2">
           <Media

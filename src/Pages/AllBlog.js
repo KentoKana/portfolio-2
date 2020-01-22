@@ -4,6 +4,7 @@ import ProgressiveImage from "react-progressive-image";
 import ImagePlaceholder from "../UI/ImagePlaceholder";
 import Pagination from "../UI/Pagination";
 import { getDateFromFileName } from "../Helpers/functions";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const AllBlog = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -30,67 +31,71 @@ const AllBlog = () => {
 
   return (
     <main className="blogPosts">
-      <h1 className="blogPosts__heading">
-        <span>Recent Blog Posts</span>
-      </h1>
+      <ScrollAnimation animateOnce={true} animateIn={"fadeInLeft"}>
+        <h1 className="blogPosts__heading">
+          <span>Recent Blog Posts</span>
+        </h1>
+      </ScrollAnimation>
       <div className="container">
-        {Object.keys(blogPosts).map((p, key) => {
-          return (
-            <div className="blogPosts__content" key={key}>
-              <ProgressiveImage
-                src={`images/blog/${blogPosts[p].featureImage}`}
-                placeholder=" "
-              >
-                {(src, loading) => {
-                  return loading ? (
-                    <ImagePlaceholder height={250} width={250} />
-                  ) : (
-                    <div>
-                      <Link
-                        className="blog__title"
-                        onClick={storePrevPage(pageNum)}
-                        to={`/single-blog?id=${blogPosts[p].id}`}
-                      >
-                        <img src={src} alt={blogPosts[p].postName} />
-                      </Link>
-                    </div>
-                  );
-                }}
-              </ProgressiveImage>
-              <div className="text">
-                <h2>
-                  <Link
-                    className="blog__title"
-                    to={`/single-blog?id=${blogPosts[p].id}`}
-                    onClick={storePrevPage(pageNum)}
-                  >
-                    {blogPosts[p].postName}
-                  </Link>
-                </h2>
-                <div>{getDateFromFileName(blogPosts[p].fileName)}</div>
-                <p>{`${blogPosts[p].textSnippet.substring(0, 150)}...`}</p>
-                <div className="read-more-link-container">
-                  <Link
-                    to={`/single-blog?id=${blogPosts[p].id}`}
-                    onClick={storePrevPage(pageNum)}
-                  >
-                    Read More
-                  </Link>
+        <ScrollAnimation animateOnce={true} animateIn={"fadeInLeft"}>
+          {Object.keys(blogPosts).map((p, key) => {
+            return (
+              <div className="blogPosts__content" key={key}>
+                <ProgressiveImage
+                  src={`images/blog/${blogPosts[p].featureImage}`}
+                  placeholder=" "
+                >
+                  {(src, loading) => {
+                    return loading ? (
+                      <ImagePlaceholder height={250} width={250} />
+                    ) : (
+                      <div>
+                        <Link
+                          className="blog__title"
+                          onClick={storePrevPage(pageNum)}
+                          to={`/single-blog?id=${blogPosts[p].id}`}
+                        >
+                          <img src={src} alt={blogPosts[p].postName} />
+                        </Link>
+                      </div>
+                    );
+                  }}
+                </ProgressiveImage>
+                <div className="text">
+                  <h2>
+                    <Link
+                      className="blog__title"
+                      to={`/single-blog?id=${blogPosts[p].id}`}
+                      onClick={storePrevPage(pageNum)}
+                    >
+                      {blogPosts[p].postName}
+                    </Link>
+                  </h2>
+                  <div>{getDateFromFileName(blogPosts[p].fileName)}</div>
+                  <p>{`${blogPosts[p].textSnippet.substring(0, 150)}...`}</p>
+                  <div className="read-more-link-container">
+                    <Link
+                      to={`/single-blog?id=${blogPosts[p].id}`}
+                      onClick={storePrevPage(pageNum)}
+                    >
+                      Read More
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-        <div className="bottom-section">
-          <Link className="back-to-home-link" to={`/`}>
-            <i className="fas fa-arrow-left"></i> Back To Home
-          </Link>
-          <Pagination
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-            pageCount={pageCount}
-          />
-        </div>
+            );
+          })}
+          <div className="bottom-section">
+            <Link className="back-to-home-link" to={`/`}>
+              <i className="fas fa-arrow-left"></i> Back To Home
+            </Link>
+            <Pagination
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+              pageCount={pageCount}
+            />
+          </div>
+        </ScrollAnimation>
       </div>
     </main>
   );

@@ -3,6 +3,7 @@ import Modal from "react-responsive-modal";
 import ProgressiveImage from "react-progressive-image";
 import ImagePlaceholder from "../UI/ImagePlaceholder";
 import { designDetails } from "../Helpers/Data";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Designs = () => {
   // Modal Logic
@@ -36,60 +37,63 @@ const Designs = () => {
       <h3 className="designs__heading">
         <span>Design Works</span>
       </h3>
-      <div className="container">
-        {designDetails.map((dd, key) => {
-          return (
-            <button
-              key={key}
-              className="designs__button"
-              onClick={e => {
-                onOpenModal(e);
-              }}
-            >
-              <ProgressiveImage src={dd.thumbnailImageSrc} placeholder=" ">
-                {(src, loading) => {
-                  return loading ? (
-                    <ImagePlaceholder height={250} width={250} />
-                  ) : (
-                    <img
-                      src={src}
-                      alt={dd.name}
-                      data-main-image-src={dd.mainImageSrc}
-                      data-image-alt={dd.name}
-                    />
-                  );
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+        <div className="container">
+          {designDetails.map((dd, key) => {
+            return (
+              <button
+                key={key}
+                className="designs__button"
+                onClick={e => {
+                  onOpenModal(e);
                 }}
-              </ProgressiveImage>
-            </button>
-          );
-        })}
-        <Modal
-          open={open}
-          onClose={onCloseModal}
-          center
-          classNames={modalClassNames}
-          closeIconSize={40}
-        >
-          <ProgressiveImage src={modalContent.imgSrc} placeholder=" ">
-            {(src, loading) => {
-              return loading ? (
-                <ImagePlaceholder
-                  height={270}
-                  width={270}
-                  bgColor="inherit"
-                  spinnerColor="gray"
-                />
-              ) : (
-                <img
-                  className="modal-image"
-                  src={src}
-                  alt={modalContent.imgAlt}
-                />
-              );
-            }}
-          </ProgressiveImage>
-        </Modal>
-      </div>
+              >
+                <ProgressiveImage src={dd.thumbnailImageSrc} placeholder=" ">
+                  {(src, loading) => {
+                    return loading ? (
+                      <ImagePlaceholder height={250} width={250} />
+                    ) : (
+                      <img
+                        src={src}
+                        alt={dd.name}
+                        data-main-image-src={dd.mainImageSrc}
+                        data-image-alt={dd.name}
+                      />
+                    );
+                  }}
+                </ProgressiveImage>
+              </button>
+            );
+          })}
+
+          <Modal
+            open={open}
+            onClose={onCloseModal}
+            center
+            classNames={modalClassNames}
+            closeIconSize={40}
+          >
+            <ProgressiveImage src={modalContent.imgSrc} placeholder=" ">
+              {(src, loading) => {
+                return loading ? (
+                  <ImagePlaceholder
+                    height={270}
+                    width={270}
+                    bgColor="inherit"
+                    spinnerColor="gray"
+                  />
+                ) : (
+                  <img
+                    className="modal-image"
+                    src={src}
+                    alt={modalContent.imgAlt}
+                  />
+                );
+              }}
+            </ProgressiveImage>
+          </Modal>
+        </div>
+      </ScrollAnimation>
     </section>
   );
 };

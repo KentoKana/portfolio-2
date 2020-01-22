@@ -2,7 +2,7 @@ import React from "react";
 import SingleWork from "./SingleWork";
 import { projectDetails } from "../Helpers/Data";
 
-function RecentWorks() {
+const RecentWorks = () => {
   return (
     <section className="recent-works" id="development">
       <div>
@@ -27,6 +27,6 @@ function RecentWorks() {
       </div>
     </section>
   );
-}
+};
 
 export default RecentWorks;

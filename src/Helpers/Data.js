@@ -84,7 +84,7 @@ export const projectDetails = [
     description:
       "I created a database-less blog system using JSON API served through Express. Markdown files are used to write the blog posts, which are then read by the Express app to serve a JSON API endpoint. There is a back-end pagination system to serve a portion of the blog posts at a time, which is consumed using React and Fetch API. Markdown syntax is converted into HTML using the react-markdown package.",
     liveUrl: "http://portfolio-new.kentokanazawa.com/blog-posts",
-    gitHubUrl: "http://google.com",
+    gitHubUrl: "https://github.com/KentoKana/portfolio-2/tree/master/server",
     learnMoreUrl: "/single-blog?id=0",
     toolsUsed: ["ReactJS", "NodeJS & ExpressJS", "Custom JSON API Endpoint"],
     imageSrc: {
@@ -95,10 +95,10 @@ export const projectDetails = [
   {
     name: "Enter the Codegeon",
     description:
-      "As part of an academic project, I worked with 2 other classmates to build a game aimed to teach kids about logical thinking. I was responsible for the back-end logic, which involved building CRUD features (including form validations) for users with MongoDB, as well as passing necessary information to the game board.",
+      "As part of an academic project, I worked with 2 other classmates to build a game aimed to get kids to practice logical thinking. I was responsible for building/planning out most of the back-end logic, which involved building CRUD features (including form validations) for users with MongoDB, as well as passing necessary information to the game board. Please use these test credentials to interact with the application: Username: TokenTestUser; Passowrd: test",
     liveUrl: "http://enter-the-codegeon.raymondgiang.com/",
     gitHubUrl: "https://github.com/KentoKana/enter-the-codegeon",
-    learnMoreUrl: "/single-blog?id=2",
+    learnMoreUrl: "",
     toolsUsed: ["PHP", "MongoDB"],
     imageSrc: {
       main: "images/projects/enter-the-codegeon.gif",
@@ -121,10 +121,10 @@ export const projectDetails = [
   {
     name: "Guess The Location",
     description:
-      "This my take on the popular game, GeoGuessr. This project uses Nominatim GeoCoder, Country.io, and Google APIs, and is consumed using React and Axios. The app randomly selects a street-view available latitude and longitude coordinate, and asks the player to guess the target location by searching for clues in the street-view.",
+      "This my take on the popular game, GeoGuessr. This project uses Nominatim GeoCoder, Country.io, and Google APIs, and is consumed using React and Axios. The app randomly selects a street-view available latitude and longitude coordinate, and asks the player to guess the target location by searching for clues in the street-view. UPDATE: There is a bug with where the app sometimes retrieves the worng coordinates as the correct answer. Working on a fix.",
     liveUrl: "http://guess-the-location.kentokanazawa.com",
-    gitHubUrl: "http://google.com",
-    learnMoreUrl: "http://google.com",
+    gitHubUrl: "https://github.com/KentoKana/guess-the-location-game",
+    learnMoreUrl: "",
     toolsUsed: [
       "ReactJS",
       "Google Maps API",
@@ -148,6 +148,18 @@ export const projectDetails = [
       main: "images/projects/xml-chat-app.gif",
       thumbnail: "images/projects/thumbnails/xml-chat-app.png"
     }
+  },
+  {
+    name: "Humbie Helper",
+    description: "This academic group project was built with the intention of allowing web development students at Humber to manage their projects. I specifically worked on the User Management system (Registration, Profile View, User Information Edit, and User Deletion). Other involvements include creation of timesheet/time, upcoming deadlines feature, and general back-end planning for the entire web application. For viewing the app, please enter the test credentials: Username: TokenTestUser; Password: test ",
+    liveUrl: "https://humbiehelper.skriptkaiju.com/",
+    gitHubUrl: "https://github.com/KentoKana/humbie-helper",
+    learnMoreUrl: "",
+    toolsUsed: ["Bootstrap 4", "PHP", "MySQL"],
+    imageSrc: {
+      main: "images/projects/humbie-helper.gif",
+      thumbnail: "images/projects/thumbnails/humbie-helper.png"
+    }
   }
 ];
 
@@ -170,7 +182,8 @@ export const designDetails = [
   },
   {
     name: "Portfolio Version 2",
-    thumbnailImageSrc: "images/projects/thumbnails/portfolio-version2-design.png",
+    thumbnailImageSrc:
+      "images/projects/thumbnails/portfolio-version2-design.png",
     mainImageSrc: "images/projects/portfolio-version2-design.png"
   }
 ];

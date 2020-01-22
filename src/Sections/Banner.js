@@ -1,9 +1,9 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-function Banner() {
+const Banner = () => {
   return (
-    <main className="banner" id="top">
+    <main className="banner fadeIn animated" id="top">
       <div className="container">
         <div className="banner__text">
           <h1>
@@ -32,6 +32,6 @@ function Banner() {
       </div>
     </main>
   );
-}
+};
 
 export default Banner;
