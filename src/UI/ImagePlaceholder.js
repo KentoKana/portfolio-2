@@ -19,8 +19,7 @@ const ImagePlaceholder = props => {
             className="placeholderImg"
             src={props.placeholderImg}
             alt="place holder"
-            style={{ filter: "brightness(50%)",
-            maxWidth: "400px" }}
+            style={{ filter: "brightness(50%)", maxWidth: "400px" }}
           />
           <Loader
             type="ThreeDots"
@@ -49,6 +48,8 @@ const ImagePlaceholder = props => {
             backgroundColor: bgColor,
             height: props.height,
             width: props.width,
+            minWidth: "250px",
+            minHeight: "250px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

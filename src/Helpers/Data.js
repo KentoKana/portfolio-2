@@ -13,14 +13,14 @@ export const homeNavLinks = [
     label: "Design",
     url: "#designs"
   },
-  {
-    label: "Blog",
-    url: "#blog",
-    child: {
-      label: "View All Blog Posts",
-      url: "/blog-posts"
-    }
-  },
+  // {
+  //   label: "Blog",
+  //   url: "#blog",
+  //   child: {
+  //     label: "View All Blog Posts",
+  //     url: "/blog-posts"
+  //   }
+  // },
   {
     label: "About",
     url: "#about"
